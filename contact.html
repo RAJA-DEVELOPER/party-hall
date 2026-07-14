@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function(){var t=localStorage.getItem('grand-palais-theme');if(t){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Grand Palais � get in touch to book our luxury banquet halls for weddings, corporate events, and private celebrations in Mumbai." />
+  <title>Contact Us � Grand Palais | Luxury Banquet & Party Hall</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="https://images.unsplash.com/photo-1745682595597-8932b7f12169?auto=format&fit=crop&w=32&h=32&q=80" />
+  <style>
+    .social-links-section { background: var(--bg-section-alt); }
+    .social-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+    .social-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      transition: var(--transition-slow);
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .social-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(201,162,39,0.1);
+    }
+    .social-card-icon { font-size: var(--fs-4xl); margin-bottom: var(--space-4); display: block; color: var(--gold); }
+    .social-card-name { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--text-primary); margin-bottom: var(--space-2); }
+    .social-card-handle { font-size: var(--fs-xs); color: var(--gold); letter-spacing: var(--ls-wider); text-transform: uppercase; }
+    .virtual-tour-section { position: relative; overflow: hidden; }
+    .virtual-tour-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .virtual-tour-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .virtual-tour-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17,17,17,0.7);
+    }
+    .virtual-tour-content { position: relative; z-index: 1; text-align: center; }
+    .emergency-section { background: var(--bg-section-alt); }
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+    .emergency-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      transition: var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+    .emergency-card .btn { margin-top: auto; }
+    .emergency-card:hover { border-color: var(--gold); box-shadow: 0 8px 40px rgba(201,162,39,0.1); transform: translateY(-4px); }
+    .emergency-card-icon { font-size: var(--fs-3xl); margin-bottom: var(--space-4); color: var(--gold); }
+    @media (max-width: 900px) {
+      .social-cards { grid-template-columns: repeat(2,1fr); }
+      .emergency-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .social-cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" aria-label="Grand Palais Home">
+      <div class="navbar-logo-icon">GP</div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">Grand Palais</span>
+        <span class="navbar-logo-tagline">Luxury Venue</span>
+      </div>
+    </a>
+    <nav class="navbar-nav" aria-label="Primary navigation">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="home2.html"    class="nav-link">Home2</a>
+      <a href="about.html"    class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html"  class="nav-link">Gallery</a>
+      <a href="contact.html"  class="nav-link active">Contact</a>
+      </nav>
+    <div class="navbar-actions">
+      <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+      <a href="login.html"   class="btn btn-ghost btn-sm hide-mobile">Sign In</a>
+      <button class="theme-toggle" aria-label="Switch to light mode"></button>
+      <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="13" font-family="Georgia,serif" font-size="12" fill="currentColor" stroke="none">A</text><path d="M10 5.5l5 3.5-5 3.5"/><path d="M1 9h14"/></svg></button>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html"    class="nav-link">Home</a>
+  <a href="home2.html"    class="nav-link">Home2</a>
+  <a href="about.html"    class="nav-link">About</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="gallery.html"  class="nav-link">Gallery</a>
+  <a href="dashboard.html" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-bottom:var(--space-2)">Dashboard</a>
+  <a href="contact.html"  class="nav-link">Contact</a>
+  <div class="theme-toggle-row">
+      <span class="theme-toggle-label">Light Mode</span>
+      <button class="theme-toggle" aria-label="Switch to light mode"></button>
+    </div>
+    <div class="mobile-menu-footer"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero-v2" aria-label="Contact hero">
+  <div class="hero-v2-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1687213280116-234f93b15b44?auto=format&fit=crop&w=1920&q=85" alt="Grand Palais ballroom" />
+  </div>
+  <div class="hero-v2-overlay" aria-hidden="true"></div>
+  <div class="hero-v2-particles" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-v2-content">
+      <h1 class="hero-v2-title" data-reveal="up">
+        <span class="hero-v2-title-row">Let's Create</span>
+        <span class="hero-v2-title-row italic">Magic Together</span>
+        <span class="hero-v2-title-row outline">Reach Out.</span>
+      </h1>
+      <p style="max-width:44ch;color:rgba(255,255,255,0.6);font-size:var(--fs-md);line-height:var(--lh-relaxed)" data-reveal="up" data-delay="200">
+        We'd love to hear about your vision. Whether it's a wedding, corporate gala, or private celebration � let's begin the conversation.
+      </p>
+      <div style="display:flex;gap:var(--space-4);margin-top:var(--space-8);flex-wrap:wrap" data-reveal="up" data-delay="400">
+        <a href="tel:+912212345678" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="mailto:info@grandpalais.in" class="btn btn-ghost btn-lg">Email Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-v2-sidebar" aria-hidden="true">
+    <a href="https://instagram.com" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+    <div class="hero-v2-sidebar-text">Follow Our Story</div>
+  </div>
+</section>
+
+<!-- --- SECTION 2: CONTACT FORM + INFO --- -->
+<section class="contact-section section" aria-labelledby="contact-form-heading">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Info Card -->
+      <div class="contact-info-card" data-reveal="left">
+        <span style="font-size:var(--fs-xs);font-weight:var(--fw-semibold);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--gold);display:block;margin-bottom:var(--space-2)">Reach Us</span>
+        <h2 class="section-title" id="contact-form-heading" style="color:var(--text-primary);font-size:clamp(1.5rem,2.5vw,2.25rem);margin-bottom:var(--space-8)">
+          We'd Love to<br><em>Hear From You</em>
+        </h2>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="contact-info-label">Address</div>
+            <div class="contact-info-value">Grand Palais Boulevard,<br>Bandra West, Mumbai 400 050,<br>Maharashtra, India</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value">
+              <a href="tel:+912212345678" style="color:inherit">+91 22 1234 5678</a><br>
+              <a href="tel:+919876543210" style="color:var(--text-tertiary);font-size:var(--fs-sm)">+91 98765 43210 (WhatsApp)</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">
+              <a href="mailto:info@grandpalais.in" style="color:inherit">info@grandpalais.in</a><br>
+              <a href="mailto:events@grandpalais.in" style="color:var(--text-tertiary);font-size:var(--fs-sm)">events@grandpalais.in</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="contact-info-label">Office Hours</div>
+            <div class="contact-info-value">Mon � Friday: 9:00 AM � 7:00 PM<br>Saturday � Sunday: 10:00 AM � 6:00 PM</div>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-color)">
+          <p style="font-size:var(--fs-xs);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4)">Follow Us</p>
+          <div style="display:flex;gap:var(--space-3)">
+            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card form-light" data-reveal="right">
+        <h3 style="font-family:var(--font-serif);font-size:var(--fs-2xl);color:var(--text-primary);margin-bottom:var(--space-8);font-weight:300">Send Us a <em style="color:var(--gold)">Message</em></h3>
+        <form id="contactForm" action="contact.html" method="POST" novalidate>
+          <div class="contact-form-grid">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" />
+              <span class="form-error" style="display:none"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+              <span class="form-error" style="display:none"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+91 98765 43210" autocomplete="tel" />
+              <span class="form-error" style="display:none"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-event">Event Type *</label>
+              <select id="contact-event" name="eventType" class="form-select" required>
+                <option value="">Select Event Type</option>
+                <option value="wedding">Wedding Ceremony</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="birthday">Birthday Party</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="social">Social Gathering</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" style="display:none"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-date">Preferred Date</label>
+              <input type="date" id="contact-date" name="date" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-guests">No. of Guests</label>
+              <select id="contact-guests" name="guests" class="form-select">
+                <option value="">Select guest count</option>
+                <option value="50-100">50�100 guests</option>
+                <option value="100-300">100�300 guests</option>
+                <option value="300-500">300�500 guests</option>
+                <option value="500-1000">500�1,000 guests</option>
+                <option value="1000+">1,000+ guests</option>
+              </select>
+            </div>
+            <div class="form-group" style="grid-column:span 2">
+              <label class="form-label" for="contact-message">Your Message *</label>
+              <textarea id="contact-message" name="message" class="form-input" rows="5" placeholder="Tell us about your event vision, requirements, or any questions you have..." required></textarea>
+              <span class="form-error" style="display:none"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:var(--space-6)">
+            Send Message
+          </button>
+          <p style="font-size:var(--fs-xs);color:var(--text-muted);text-align:center;margin-top:var(--space-4)">
+            We respond to all enquiries within 24 hours.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 3: MAP --- -->
+<section class="map-section section" aria-labelledby="map-heading">
+  <div class="container">
+    <div class="section-header" data-reveal="up">
+      <span class="eyebrow">Location</span>
+      <h2 class="section-title" id="map-heading">Find <em>Grand Palais</em></h2>
+    </div>
+    <div class="map-container" data-reveal="scale">
+      <!-- Embedded Google Maps iframe placeholder � replace src with real embed URL -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.9274997082!2d72.8295!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzM0LjYiTiA3MsKwNDknNDYuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;border-radius:var(--radius-2xl);"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Grand Palais location map"
+      ></iframe>
+    </div>
+    <!-- Address Cards below map -->
+    <div class="grid-address" style="margin-top:var(--space-8)">
+      <div class="card-glass" style="background:var(--bg-card);border-color:var(--border-color)" data-reveal="up" data-delay="100">
+        <div style="font-size:var(--fs-2xl);margin-bottom:var(--space-3);color:var(--gold)"><i class="fa-solid fa-train-subway"></i></div>
+        <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-2)">By Metro</h4>
+        <p style="font-size:var(--fs-sm);color:var(--text-tertiary)">Bandra Station (Western Line) � 5 min drive. Exit Gate 2, take auto to Grand Palais Boulevard.</p>
+      </div>
+      <div class="card-glass" style="background:var(--bg-card);border-color:var(--border-color)" data-reveal="up" data-delay="200">
+        <div style="font-size:var(--fs-2xl);margin-bottom:var(--space-3);color:var(--gold)"><i class="fa-solid fa-car"></i></div>
+        <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-2)">By Car</h4>
+        <p style="font-size:var(--fs-sm);color:var(--text-tertiary)">Valet parking available for 500+ vehicles. Entry from Linking Road; dedicated parking levels B1�B3.</p>
+      </div>
+      <div class="card-glass" style="background:var(--bg-card);border-color:var(--border-color)" data-reveal="up" data-delay="300">
+        <div style="font-size:var(--fs-2xl);margin-bottom:var(--space-3);color:var(--gold)"><i class="fa-solid fa-plane"></i></div>
+        <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-2)">From Airport</h4>
+        <p style="font-size:var(--fs-sm);color:var(--text-tertiary)">Mumbai International Airport � 25�35 mins via Western Express Highway. We arrange luxury airport transfers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 4: HOURS & PHONE --- -->
+<section class="section section-bg-ivory" aria-labelledby="hours-heading">
+  <div class="container">
+    <div class="split-50-50" style="gap:var(--space-16)">
+      <div data-reveal="left">
+        <span class="eyebrow">Opening Hours</span>
+        <h2 class="section-title" id="hours-heading" style="color:var(--text-primary)">We're Open<br><em>Every Day</em></h2>
+        <p style="color:var(--text-secondary);margin-bottom:var(--space-8)">Our team is available year-round to assist you � including weekends and public holidays.</p>
+        <div class="hours-grid">
+          <div class="hours-item" style="background:var(--bg-card);border-color:var(--border-color)">
+            <span class="hours-day" style="color:var(--text-secondary)">Monday � Friday</span>
+            <span class="hours-time">9:00 AM � 7:00 PM</span>
+          </div>
+          <div class="hours-item" style="background:var(--bg-card);border-color:var(--border-color)">
+            <span class="hours-day" style="color:var(--text-secondary)">Saturday</span>
+            <span class="hours-time">10:00 AM � 6:00 PM</span>
+          </div>
+          <div class="hours-item" style="background:var(--bg-card);border-color:var(--border-color)">
+            <span class="hours-day" style="color:var(--text-secondary)">Sunday</span>
+            <span class="hours-time">10:00 AM � 5:00 PM</span>
+          </div>
+          <div class="hours-item" style="background:var(--bg-card);border-color:var(--border-color)">
+            <span class="hours-day" style="color:var(--text-secondary)">Public Holidays</span>
+            <span class="hours-time">By Appointment</span>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Grand Palais reception area" style="width:100%;border-radius:var(--radius-2xl);object-fit:cover;aspect-ratio:4/3;" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 5: SOCIAL LINKS --- -->
+<section class="social-links-section section section-bg-ivory" aria-labelledby="social-heading">
+  <div class="container">
+    <div class="section-header" data-reveal="up">
+      <span class="eyebrow">Stay Connected</span>
+      <h2 class="section-title" id="social-heading">Follow Our <em>World</em></h2>
+    </div>
+    <div class="social-cards">
+      <a href="#" class="social-card" data-reveal="scale" data-delay="100" aria-label="Follow on Instagram">
+        <span class="social-card-icon"><i class="fa-brands fa-instagram"></i></span>
+        <div class="social-card-name">Instagram</div>
+        <div class="social-card-handle">@grandpalais</div>
+      </a>
+      <a href="#" class="social-card" data-reveal="scale" data-delay="200" aria-label="Follow on Facebook">
+        <span class="social-card-icon"><i class="fa-brands fa-facebook-f"></i></span>
+        <div class="social-card-name">Facebook</div>
+        <div class="social-card-handle">/grandpalais.in</div>
+      </a>
+      <a href="#" class="social-card" data-reveal="scale" data-delay="300" aria-label="Subscribe on YouTube">
+        <span class="social-card-icon"><i class="fa-brands fa-youtube"></i></span>
+        <div class="social-card-name">YouTube</div>
+        <div class="social-card-handle">Grand Palais Films</div>
+      </a>
+      <a href="#" class="social-card" data-reveal="scale" data-delay="400" aria-label="Follow on Pinterest">
+        <span class="social-card-icon"><i class="fa-brands fa-pinterest"></i></span>
+        <div class="social-card-name">Pinterest</div>
+        <div class="social-card-handle">@grandpalais</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 6: VIRTUAL TOUR CTA --- -->
+<section class="virtual-tour-section section" aria-labelledby="tour-heading">
+  <div class="virtual-tour-bg">
+    <img src="https://images.unsplash.com/photo-1774020040126-83543f6de513?auto=format&fit=crop&w=1920&q=80" alt="Grand Palais virtual tour" loading="lazy" />
+  </div>
+  <div class="virtual-tour-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="virtual-tour-content" data-reveal="up">
+      <span class="eyebrow eyebrow--light">Explore From Home</span>
+      <h2 class="section-title" id="tour-heading" style="color:var(--white)">Take a Virtual <em>360� Tour</em></h2>
+      <p style="color:rgba(255,255,255,0.65);max-width:44ch;margin:var(--space-5) auto;font-size:var(--fs-md);line-height:var(--lh-relaxed)">
+        Can't visit in person? Explore every inch of Grand Palais from the comfort of your home with our immersive 360� virtual walkthrough.
+      </p>
+      <a href="#" class="btn btn-primary btn-xl" style="margin-top:var(--space-4)">Launch Virtual Tour <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 7: FAQ QUICK LINKS --- -->
+<section class="section section-bg-ivory" aria-labelledby="contact-faq-heading">
+  <div class="container">
+    <div class="section-header" data-reveal="up">
+      <span class="eyebrow">Quick Answers</span>
+      <h2 class="section-title" id="contact-faq-heading">Common <em>Questions</em></h2>
+    </div>
+    <div class="grid-faq">
+      <a href="home2.html#faq-heading" class="card-glass" style="background:var(--bg-card);border-color:var(--border-color);display:flex;align-items:center;gap:var(--space-4);text-decoration:none" data-reveal="up" data-delay="100">
+        <span style="font-size:var(--fs-2xl);flex-shrink:0;color:var(--gold)"><i class="fa-solid fa-calendar-days"></i></span>
+        <div><h4 style="color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-1)">How far in advance should I book?</h4><span style="font-size:var(--fs-xs);color:var(--gold)">Read Answer <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      <a href="home2.html#faq-heading" class="card-glass" style="background:var(--bg-card);border-color:var(--border-color);display:flex;align-items:center;gap:var(--space-4);text-decoration:none" data-reveal="up" data-delay="200">
+        <span style="font-size:var(--fs-2xl);flex-shrink:0;color:var(--gold)"><i class="fa-solid fa-utensils"></i></span>
+        <div><h4 style="color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-1)">Can we customize the menu?</h4><span style="font-size:var(--fs-xs);color:var(--gold)">Read Answer <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      <a href="home2.html#faq-heading" class="card-glass" style="background:var(--bg-card);border-color:var(--border-color);display:flex;align-items:center;gap:var(--space-4);text-decoration:none" data-reveal="up" data-delay="300">
+        <span style="font-size:var(--fs-2xl);flex-shrink:0;color:var(--gold)"><i class="fa-solid fa-gift"></i></span>
+        <div><h4 style="color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-1)">What is included in venue hire?</h4><span style="font-size:var(--fs-xs);color:var(--gold)">Read Answer <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      <a href="home2.html#faq-heading" class="card-glass" style="background:var(--bg-card);border-color:var(--border-color);display:flex;align-items:center;gap:var(--space-4);text-decoration:none" data-reveal="up" data-delay="400">
+        <span style="font-size:var(--fs-2xl);flex-shrink:0;color:var(--gold)"><i class="fa-solid fa-eye"></i></span>
+        <div><h4 style="color:var(--text-primary);font-size:var(--fs-base);margin-bottom:var(--space-1)">Can we visit the venue first?</h4><span style="font-size:var(--fs-xs);color:var(--gold)">Read Answer <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- --- SECTION 8: EMERGENCY / DIRECT LINE --- -->
+<section class="emergency-section section" aria-labelledby="emergency-heading">
+  <div class="container">
+    <div class="section-header" data-reveal="up">
+      <span class="eyebrow">Priority Support</span>
+      <h2 class="section-title" id="emergency-heading">Need <em>Immediate Help?</em></h2>
+      <p class="section-subtitle" style="color:var(--text-secondary)">For active events and urgent day-of coordination, reach our dedicated operations team directly.</p>
+    </div>
+    <div class="emergency-grid">
+      <div class="emergency-card" data-reveal="up" data-delay="100">
+        <div class="emergency-card-icon"><i class="fa-solid fa-phone"></i></div>
+        <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-xl);margin-bottom:var(--space-3)">Events Hotline</h3>
+        <p style="color:var(--text-tertiary);font-size:var(--fs-sm);margin-bottom:var(--space-5)">For active events and day-of emergencies. Available 24/7 during booked events.</p>
+        <a href="tel:+919999000111" class="btn btn-primary" style="width:100%">+91 99990 00111</a>
+      </div>
+      <div class="emergency-card" data-reveal="up" data-delay="200">
+        <div class="emergency-card-icon"><i class="fa-solid fa-comment"></i></div>
+        <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-xl);margin-bottom:var(--space-3)">WhatsApp Chat</h3>
+        <p style="color:var(--text-tertiary);font-size:var(--fs-sm);margin-bottom:var(--space-5)">Send us a WhatsApp message and our team responds within 10 minutes during business hours.</p>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">Message on WhatsApp</a>
+      </div>
+      <div class="emergency-card" data-reveal="up" data-delay="300">
+        <div class="emergency-card-icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-xl);margin-bottom:var(--space-3)">Priority Email</h3>
+        <p style="color:var(--text-tertiary);font-size:var(--fs-sm);margin-bottom:var(--space-5)">Use our priority email for urgent booking enquiries � guaranteed 4-hour response time.</p>
+        <a href="mailto:urgent@grandpalais.in" class="btn btn-primary" style="width:100%">urgent@grandpalais.in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5)">
+          <div class="navbar-logo-icon">GP</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Grand Palais</span>
+            <span class="navbar-logo-tagline">Luxury Venue</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">Mumbai's most prestigious luxury banquet hall � where exceptional service meets timeless elegance.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-heading">Pages</h3>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="home2.html" class="footer-link">Home (Alt)</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+          <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Wedding Ceremonies</a></li>
+          <li><a href="services.html" class="footer-link">Corporate Events</a></li>
+          <li><a href="services.html" class="footer-link">Private Parties</a></li>
+          <li><a href="services.html" class="footer-link">Catering & Cuisine</a></li>
+          <li><a href="services.html" class="footer-link">D�cor & Florals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li class="footer-link">Grand Palais Boulevard,<br>Bandra West, Mumbai 400 050</li>
+          <li><a href="tel:+912212345678" class="footer-link">+91 22 1234 5678</a></li>
+          <li><a href="mailto:info@grandpalais.in" class="footer-link">info@grandpalais.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Grand Palais Luxury Venues Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

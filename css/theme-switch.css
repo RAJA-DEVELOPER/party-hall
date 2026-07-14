@@ -1,0 +1,51 @@
+/* ============================================================
+   GRAND PALAIS — Theme Toggle Button
+   ============================================================ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: all var(--duration-base) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--gold);
+  border-color: var(--gold-muted);
+  background: var(--gold-glass);
+  transform: rotate(15deg);
+}
+
+.theme-toggle svg {
+  display: block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/* ── Mobile theme toggle row ────────────────────────────── */
+.theme-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-3);
+}
+
+.theme-toggle-label {
+  font-size: var(--fs-sm);
+  font-family: var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}

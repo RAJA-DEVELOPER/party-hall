@@ -1,0 +1,281 @@
+/* ============================================================
+   GRAND PALAIS — Hero Slider
+   ============================================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+/* ── Slides ────────────────────────────────────────────── */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-in-out);
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: kenBurns 18s ease-in-out infinite alternate;
+}
+
+.hero-slide.active .hero-slide-bg {
+  animation-play-state: running;
+}
+
+.hero-slide:not(.active) .hero-slide-bg {
+  animation-play-state: paused;
+}
+
+/* Background gradients used instead of images */
+.slide-bg-1 {
+  background: linear-gradient(135deg, #1a0f00 0%, #2d1c00 30%, #111 100%);
+}
+.slide-bg-2 {
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0d2e 40%, #111 100%);
+}
+.slide-bg-3 {
+  background: linear-gradient(135deg, #001a0d 0%, #0d2b1a 40%, #111 100%);
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  z-index: 1;
+}
+
+/* ── Hero Content ──────────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: var(--navbar-height);
+}
+
+.hero-content-centered {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroSubReveal 0.8s var(--ease-out) 0.3s forwards;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--fs-3xl), 6vw, var(--fs-7xl));
+  font-weight: var(--fw-light);
+  color: var(--white);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: var(--space-6) 0;
+  max-width: 16ch;
+  opacity: 0;
+  transform: translateY(30px) skewY(1deg);
+  animation: heroTextReveal 1s var(--ease-out) 0.6s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  font-size: clamp(var(--fs-base), 1.5vw, var(--fs-md));
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: 44ch;
+  margin-bottom: var(--space-10);
+  font-family: var(--font-body);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroSubReveal 0.8s var(--ease-out) 0.9s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: heroBtnReveal 0.8s var(--ease-out) 1.2s forwards;
+}
+
+/* ── Scroll Indicator ──────────────────────────────────── */
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-10);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  opacity: 0;
+  animation: fadeIn 1s var(--ease-out) 1.8s forwards;
+}
+
+.hero-scroll-label {
+  font-size: 10px;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(201,162,39,0.6) 0%, transparent 100%);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50%       { transform: scaleY(0.5); opacity: 0.3; }
+}
+
+/* ── Slider Controls ───────────────────────────────────── */
+.hero-controls {
+  position: absolute;
+  bottom: var(--space-10);
+  right: var(--space-8);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-5);
+}
+
+.hero-dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.hero-dot.active {
+  width: 24px;
+  background: var(--gold);
+}
+
+.hero-arrows {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.hero-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+  font-size: var(--fs-md);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+}
+
+.hero-arrow:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-glass);
+}
+
+/* ── Progress Bar ──────────────────────────────────────── */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  z-index: 2;
+}
+
+.hero-progress-bar {
+  height: 100%;
+  background: var(--gradient-gold-h);
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+/* ── Slide Info Badge ──────────────────────────────────── */
+.hero-slide-info {
+  position: absolute;
+  bottom: var(--space-10);
+  left: var(--space-8);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hero-slide-count {
+  font-family: var(--font-serif);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.hero-slide-count span {
+  font-size: var(--fs-2xl);
+  color: var(--gold);
+  font-weight: var(--fw-light);
+  line-height: 1;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-content { padding: 0 var(--space-5); padding-top: var(--navbar-height); }
+  .hero-title   { max-width: 20ch; }
+  .hero-actions { gap: var(--space-3); }
+  .hero-controls { right: var(--space-5); bottom: var(--space-6); }
+  .hero-slide-info { left: var(--space-5); bottom: var(--space-6); }
+  .hero-scroll  { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 100svh; }
+  .hero-arrows { display: none; }
+}

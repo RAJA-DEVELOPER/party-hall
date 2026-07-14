@@ -1,0 +1,18 @@
+/* ============================================================
+   GRAND PALAIS — Master CSS Import File
+   ============================================================ */
+
+/* Foundation */
+@import 'variables.css';
+@import 'reset.css';
+@import 'typography.css';
+@import 'layout.css';
+@import 'animations.css';
+
+/* Theme */
+@import 'theme.css';
+@import 'theme-switch.css';
+
+/* Components */
+@import 'components.css';
+@import 'hero.css';

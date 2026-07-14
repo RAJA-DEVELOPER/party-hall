@@ -1,0 +1,734 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function(){var t=localStorage.getItem('grand-palais-theme');if(t){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>My Dashboard — Grand Palais</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="https://images.unsplash.com/photo-1763231575952-98244918f99b?auto=format&fit=crop&w=32&h=32&q=80" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" role="navigation" aria-label="Dashboard navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" aria-label="Grand Palais Home">
+      <div class="navbar-logo-icon">GP</div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">Grand Palais</span>
+        <span class="navbar-logo-tagline">Client Portal</span>
+      </div>
+    </a>
+    <div class="dashboard-nav-actions">
+      <span class="dashboard-welcome">Welcome back, <strong>Priya</strong></span>
+      <div class="dashboard-nav-divider"></div>
+      <a href="index.html" class="btn btn-ghost btn-sm">Back to Site</a>
+      <a href="login.html" class="btn btn-secondary btn-sm">Sign Out</a>
+      <button class="theme-toggle" aria-label="Switch to light mode"></button>
+      <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="13" font-family="Georgia,serif" font-size="12" fill="currentColor" stroke="none">A</text><path d="M10 5.5l5 3.5-5 3.5"/><path d="M1 9h14"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- DASHBOARD WRAPPER -->
+<div class="dashboard-wrapper">
+
+  <!-- -- SIDEBAR -- -->
+  <aside class="dashboard-sidebar" role="complementary" aria-label="Dashboard navigation">
+    <div class="sidebar-header">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">P</div>
+        <div>
+          <div class="sidebar-user-name">Priya Mehta</div>
+          <div class="sidebar-user-role">Premium Client</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Dashboard sections" role="tablist">
+
+      <div class="sidebar-section-label">Main</div>
+      <button class="sidebar-nav-item active" data-panel="overview" role="tab" aria-selected="true">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-chart-pie"></i></span>
+        Dashboard Overview
+      </button>
+      <button class="sidebar-nav-item" data-panel="calendar" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-days"></i></span>
+        Hall Availability
+      </button>
+      <button class="sidebar-nav-item" data-panel="booking-form" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-plus-circle"></i></span>
+        New Booking Request
+      </button>
+
+      <div class="sidebar-section-label">My Bookings</div>
+      <button class="sidebar-nav-item" data-panel="booking-status" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-clock"></i></span>
+        Booking Status
+        <span class="sidebar-nav-badge">2</span>
+      </button>
+      <button class="sidebar-nav-item" data-panel="my-bookings" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-check"></i></span>
+        My Bookings
+      </button>
+
+      <div class="sidebar-section-label">Finance</div>
+      <button class="sidebar-nav-item" data-panel="invoice" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-file-invoice"></i></span>
+        Invoice Details
+      </button>
+      <button class="sidebar-nav-item" data-panel="payments" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-credit-card"></i></span>
+        Payment History
+      </button>
+
+      <div class="sidebar-section-label">Account</div>
+      <button class="sidebar-nav-item" data-panel="profile" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-user"></i></span>
+        My Profile
+      </button>
+      <button class="sidebar-nav-item" data-panel="settings" role="tab" aria-selected="false">
+        <span class="sidebar-nav-icon"><i class="fa-solid fa-gear"></i></span>
+        Settings
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">
+        + New Booking
+      </a>
+      <div style="margin-top:var(--space-4);padding:var(--space-4);background:var(--gold-glass);border:1px solid rgba(201,162,39,0.15);border-radius:var(--radius-lg);text-align:center">
+        <div style="font-size:var(--fs-xs);color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--space-2)">Need Help?</div>
+        <a href="contact.html" style="font-size:var(--fs-xs);color:rgba(255,255,255,0.5)">Contact Support</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- -- MAIN CONTENT -- -->
+  <main class="dashboard-main" role="main">
+
+    <!-- -- OVERVIEW PANEL ----------------------------------- -->
+    <div class="dashboard-panel active" data-panel-id="overview">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Dashboard Overview</h1>
+          <p class="dashboard-page-subtitle">Welcome back, Priya! Here's your booking summary.</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm" onclick="document.querySelector('[data-panel=booking-form]').click();return false;">+ New Booking</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="overview-stats">
+        <div class="overview-stat-card">
+          <div class="overview-stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="overview-stat-value">3</div>
+          <div class="overview-stat-label">Total Bookings</div>
+          <div class="overview-stat-change up">? 1 this year</div>
+        </div>
+        <div class="overview-stat-card">
+          <div class="overview-stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="overview-stat-value">1</div>
+          <div class="overview-stat-label">Confirmed Events</div>
+          <div class="overview-stat-change up">Upcoming Dec 2025</div>
+        </div>
+        <div class="overview-stat-card">
+          <div class="overview-stat-icon"><i class="fa-solid fa-hourglass"></i></div>
+          <div class="overview-stat-value">2</div>
+          <div class="overview-stat-label">Pending Review</div>
+          <div class="overview-stat-change" style="color:var(--warning)">Awaiting confirmation</div>
+        </div>
+        <div class="overview-stat-card">
+          <div class="overview-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div class="overview-stat-value" style="font-size:var(--fs-xl)">&#x20B9;18L</div>
+          <div class="overview-stat-label">Total Spent</div>
+          <div class="overview-stat-change up">? Premium Client</div>
+        </div>
+      </div>
+
+      <!-- Upcoming Event -->
+      <div class="dashboard-overview-grid">
+        <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);overflow:hidden">
+          <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--dark-border);display:flex;align-items:center;justify-content:space-between">
+            <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg);font-weight:300">Upcoming Event</h3>
+            <span class="badge badge-gold">Confirmed</span>
+          </div>
+          <div style="padding:var(--space-6)">
+            <div style="display:flex;gap:var(--space-5);align-items:flex-start">
+              <img src="https://images.unsplash.com/photo-1742281258189-3b933879867a?auto=format&fit=crop&w=200&q=80" alt="Wedding event" style="width:90px;height:90px;border-radius:var(--radius-lg);object-fit:cover;flex-shrink:0;" loading="lazy" />
+              <div>
+                <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-xl);margin-bottom:var(--space-2)">Priya & Rohan Wedding</h4>
+                <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+                  <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-calendar-days"></i> December 14, 2025</span>
+                  <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-location-dot"></i> The Royal Ballroom</span>
+                  <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-users"></i> 500 guests</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:var(--space-5);padding-top:var(--space-5);border-top:1px solid var(--dark-border)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-3)">
+                <span style="font-size:var(--fs-sm);color:var(--text-tertiary)">Event in</span>
+                <span style="font-size:var(--fs-sm);font-weight:600;color:var(--gold)">153 days</span>
+              </div>
+              <div style="height:6px;background:var(--glass-bg);border-radius:999px;overflow:hidden">
+                <div style="width:42%;height:100%;background:var(--gradient-gold-h);border-radius:999px"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:var(--space-2)">
+                <span style="font-size:var(--fs-xs);color:var(--text-muted)">Booking Placed</span>
+                <span style="font-size:var(--fs-xs);color:var(--text-muted)">Event Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6)">
+            <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg);font-weight:300;margin-bottom:var(--space-4)">Quick Actions</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <button onclick="document.querySelector('[data-panel=booking-form]').click()" class="btn btn-secondary" style="width:100%;justify-content:flex-start;gap:var(--space-3)"><i class="fa-solid fa-plus-circle"></i> Make New Booking</button>
+              <button onclick="document.querySelector('[data-panel=invoice]').click()" class="btn btn-ghost" style="width:100%;justify-content:flex-start;gap:var(--space-3)"><i class="fa-solid fa-file-invoice"></i> View Invoice</button>
+              <button onclick="document.querySelector('[data-panel=payments]').click()" class="btn btn-ghost" style="width:100%;justify-content:flex-start;gap:var(--space-3)"><i class="fa-solid fa-credit-card"></i> Payment History</button>
+              <a href="contact.html" class="btn btn-ghost" style="justify-content:flex-start;gap:var(--space-3)"><i class="fa-solid fa-headset"></i> Contact Support</a>
+            </div>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(201,162,39,0.12),rgba(201,162,39,0.04));border:1px solid rgba(201,162,39,0.2);border-radius:var(--radius-xl);padding:var(--space-5)">
+            <div style="font-size:var(--fs-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-3)">Loyalty Status</div>
+            <div style="font-family:var(--font-serif);font-size:var(--fs-2xl);color:var(--text-primary);margin-bottom:var(--space-2)">Gold Member</div>
+            <div style="font-size:var(--fs-xs);color:var(--text-tertiary);line-height:1.6">You enjoy 10% off services, priority booking, and dedicated account manager access.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- CALENDAR PANEL ------------------------------------ -->
+    <div class="dashboard-panel" data-panel-id="calendar">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Hall Availability</h1>
+          <p class="dashboard-page-subtitle">Check available dates and click to select for your booking.</p>
+        </div>
+      </div>
+      <div class="dashboard-calendar-layout">
+        <div class="calendar-wrapper">
+          <div class="calendar-header">
+            <div class="calendar-month-year">July 2025</div>
+            <div class="calendar-nav">
+              <button class="calendar-nav-btn prev" aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="calendar-nav-btn next" aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="calendar-weekdays">
+            <div class="calendar-weekday">Sun</div><div class="calendar-weekday">Mon</div>
+            <div class="calendar-weekday">Tue</div><div class="calendar-weekday">Wed</div>
+            <div class="calendar-weekday">Thu</div><div class="calendar-weekday">Fri</div>
+            <div class="calendar-weekday">Sat</div>
+          </div>
+          <div class="calendar-grid" aria-label="Calendar dates"></div>
+          <div class="calendar-legend">
+            <div class="legend-item"><div class="legend-dot available"></div>Available</div>
+            <div class="legend-item"><div class="legend-dot booked"></div>Booked</div>
+            <div class="legend-item"><div class="legend-dot pending"></div>Pending</div>
+            <div class="legend-item"><div class="legend-dot selected"></div>Selected</div>
+          </div>
+        </div>
+        <div>
+          <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h4 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--text-primary);margin-bottom:var(--space-5)">Selected Date Details</h4>
+            <div id="selected-date-info" style="font-size:var(--fs-sm);color:var(--text-tertiary);text-align:center;padding:var(--space-8) 0">
+              Click on a date to see availability details
+            </div>
+          </div>
+          <div style="margin-top:var(--space-4);background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h4 style="font-family:var(--font-serif);font-size:var(--fs-base);color:var(--text-primary);margin-bottom:var(--space-4)">Hall Options</h4>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;padding:var(--space-3);border:1px solid var(--dark-border);border-radius:var(--radius-md)">
+                <input type="radio" name="hall" value="royal" style="accent-color:var(--gold)"> <span style="font-size:var(--fs-sm);color:var(--text-secondary)">Royal Ballroom (2,000 guests)</span>
+              </label>
+              <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;padding:var(--space-3);border:1px solid var(--dark-border);border-radius:var(--radius-md)">
+                <input type="radio" name="hall" value="garden"> <span style="font-size:var(--fs-sm);color:var(--text-secondary)">Garden Pavilion (500 guests)</span>
+              </label>
+              <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;padding:var(--space-3);border:1px solid var(--dark-border);border-radius:var(--radius-md)">
+                <input type="radio" name="hall" value="exec"> <span style="font-size:var(--fs-sm);color:var(--text-secondary)">Executive Suite (300 guests)</span>
+              </label>
+            </div>
+            <button onclick="document.querySelector('[data-panel=booking-form]').click()" class="btn btn-primary" style="width:100%;margin-top:var(--space-5)">Proceed to Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- BOOKING FORM PANEL -------------------------------- -->
+    <div class="dashboard-panel" data-panel-id="booking-form">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">New Booking Request</h1>
+          <p class="dashboard-page-subtitle">Fill in your event details and we'll confirm within 24 hours.</p>
+        </div>
+      </div>
+      <div class="booking-form-card">
+        <form id="bookingForm" action="dashboard.html" method="POST" novalidate>
+          <div class="booking-form-grid">
+            <div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--text-primary);margin-bottom:var(--space-6);font-weight:300">Event Details</h3>
+              <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+                <div class="form-group">
+                  <label class="form-label" for="b-event-type">Event Type *</label>
+                  <select id="b-event-type" class="form-select" required>
+                    <option value="">Select Type</option>
+                    <option value="wedding">Wedding Ceremony</option>
+                    <option value="corporate">Corporate Event</option>
+                    <option value="birthday">Birthday Party</option>
+                    <option value="anniversary">Anniversary Celebration</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-event-name">Event Name / Theme</label>
+                  <input type="text" id="b-event-name" class="form-input" placeholder="e.g. Priya & Rohan's Wedding" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="booking-date">Event Date *</label>
+                  <input type="date" id="booking-date" class="form-input" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-time">Start Time</label>
+                  <select id="b-time" class="form-select">
+                    <option value="">Select Time</option>
+                    <option>9:00 AM</option><option>11:00 AM</option>
+                    <option>1:00 PM</option><option>3:00 PM</option>
+                    <option>5:00 PM</option><option>7:00 PM</option><option>9:00 PM</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-duration">Duration</label>
+                  <select id="b-duration" class="form-select">
+                    <option value="">Select Duration</option>
+                    <option>4 Hours</option><option>6 Hours</option>
+                    <option>8 Hours</option><option>12 Hours</option><option>Full Day (16 hrs)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--text-primary);margin-bottom:var(--space-6);font-weight:300">Venue & Guests</h3>
+              <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+                <div class="form-group">
+                  <label class="form-label" for="b-hall">Hall Selection *</label>
+                  <select id="b-hall" class="form-select" required>
+                    <option value="">Choose Hall</option>
+                    <option value="royal">Royal Ballroom (up to 2,000)</option>
+                    <option value="garden">Garden Pavilion (up to 500)</option>
+                    <option value="exec">Executive Suite (up to 300)</option>
+                    <option value="terrace">Rooftop Terrace (up to 150)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-guests">Expected Guests *</label>
+                  <input type="number" id="b-guests" class="form-input" placeholder="e.g. 350" min="10" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Services Required</label>
+                  <div style="display:flex;flex-direction:column;gap:var(--space-3);margin-top:var(--space-2)">
+                    <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;font-size:var(--fs-sm);color:var(--text-secondary)"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"> Catering & Cuisine</label>
+                    <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;font-size:var(--fs-sm);color:var(--text-secondary)"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"> Décor & Florals</label>
+                    <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;font-size:var(--fs-sm);color:var(--text-secondary)"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"> A/V & Entertainment</label>
+                    <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;font-size:var(--fs-sm);color:var(--text-secondary)"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"> Photography & Video</label>
+                    <label style="display:flex;gap:var(--space-3);align-items:center;cursor:pointer;font-size:var(--fs-sm);color:var(--text-secondary)"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"> Valet Parking</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:var(--space-8)">
+            <label class="form-label" for="b-notes">Special Requests / Notes</label>
+            <textarea id="b-notes" class="form-input" rows="4" placeholder="Any specific requirements, dietary needs, or special requests..."></textarea>
+          </div>
+          <div style="display:flex;gap:var(--space-4);justify-content:flex-end">
+            <button type="reset" class="btn btn-ghost btn-lg">Clear Form</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit Booking Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- -- BOOKING STATUS PANEL ----------------------------- -->
+    <div class="dashboard-panel" data-panel-id="booking-status">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Booking Status</h1>
+          <p class="dashboard-page-subtitle">Track the status of all your booking requests.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+        <!-- Confirmed -->
+        <div style="background:var(--bg-card);border:1px solid rgba(76,175,80,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+          <img src="https://images.unsplash.com/photo-1603298573248-3e98441a0d6d?auto=format&fit=crop&w=100&q=80" alt="Wedding" style="width:70px;height:70px;border-radius:var(--radius-lg);object-fit:cover;flex-shrink:0;" loading="lazy" />
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
+              <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg)">Priya & Rohan Wedding Reception</h4>
+              <span class="badge badge-success">? Confirmed</span>
+            </div>
+            <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-calendar-days"></i> Dec 14, 2025</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-location-dot"></i> Royal Ballroom</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-users"></i> 500 guests</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)">Booking #GP-2025-1214</span>
+            </div>
+          </div>
+          <button onclick="document.querySelector('[data-panel=invoice]').click()" class="btn btn-ghost btn-sm" style="flex-shrink:0">View Invoice</button>
+        </div>
+        <!-- Pending -->
+        <div style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=100&q=80" alt="Corporate event" style="width:70px;height:70px;border-radius:var(--radius-lg);object-fit:cover;flex-shrink:0;" loading="lazy" />
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
+              <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg)">Annual Team Celebration</h4>
+              <span class="badge badge-warning">? Pending Review</span>
+            </div>
+            <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-calendar-days"></i> Mar 8, 2026</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-location-dot"></i> Garden Pavilion</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-users"></i> 200 guests</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)">Booking #GP-2026-0308</span>
+            </div>
+            <p style="font-size:var(--fs-xs);color:rgba(255,152,0,0.7);margin-top:var(--space-2)">Expected confirmation within 24–48 hours. Our team will contact you via email.</p>
+          </div>
+        </div>
+        <!-- Pending 2 -->
+        <div style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+          <div style="width:70px;height:70px;border-radius:var(--radius-lg);background:var(--gold-glass);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0"><i class="fa-solid fa-cake-candles"></i></div>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
+              <h4 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg)">50th Birthday Celebration</h4>
+              <span class="badge badge-warning">? Pending Review</span>
+            </div>
+            <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-calendar-days"></i> May 20, 2026</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-location-dot"></i> Executive Suite</span>
+              <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-users"></i> 150 guests</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- MY BOOKINGS PANEL -------------------------------- -->
+    <div class="dashboard-panel" data-panel-id="my-bookings">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">My Bookings</h1>
+          <p class="dashboard-page-subtitle">Complete history of all your events at Grand Palais.</p>
+        </div>
+        <button onclick="document.querySelector('[data-panel=booking-form]').click()" class="btn btn-primary btn-sm">+ New Booking</button>
+      </div>
+      <div class="bookings-table-wrapper">
+        <table class="bookings-table" aria-label="Booking history">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Hall</th>
+              <th>Guests</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--gold)">#GP-2025-1214</td>
+              <td>Wedding Reception</td>
+              <td>Dec 14, 2025</td>
+              <td>Royal Ballroom</td>
+              <td>500</td>
+              <td style="color:var(--text-primary);font-weight:500">?18,00,000</td>
+              <td><span class="badge badge-success">Confirmed</span></td>
+              <td><button onclick="document.querySelector('[data-panel=invoice]').click()" class="btn btn-ghost btn-sm">Invoice</button></td>
+            </tr>
+            <tr>
+              <td style="color:var(--gold)">#GP-2026-0308</td>
+              <td>Corporate Party</td>
+              <td>Mar 8, 2026</td>
+              <td>Garden Pavilion</td>
+              <td>200</td>
+              <td style="color:var(--text-primary);font-weight:500">?8,50,000</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td><button class="btn btn-ghost btn-sm">Details</button></td>
+            </tr>
+            <tr>
+              <td style="color:var(--gold)">#GP-2026-0520</td>
+              <td>Birthday Party</td>
+              <td>May 20, 2026</td>
+              <td>Executive Suite</td>
+              <td>150</td>
+              <td style="color:var(--text-primary);font-weight:500">?5,20,000</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td><button class="btn btn-ghost btn-sm">Details</button></td>
+            </tr>
+            <tr style="opacity:0.5">
+              <td style="color:var(--gold)">#GP-2024-0820</td>
+              <td>Anniversary Dinner</td>
+              <td>Aug 20, 2024</td>
+              <td>Private Dining</td>
+              <td>40</td>
+              <td style="color:var(--text-primary);font-weight:500">?1,80,000</td>
+              <td><span class="badge" style="background:var(--glass-bg);color:var(--text-tertiary);border-color:transparent">Completed</span></td>
+              <td><button class="btn btn-ghost btn-sm">Receipt</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- -- INVOICE PANEL ------------------------------------ -->
+    <div class="dashboard-panel" data-panel-id="invoice">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Invoice Details</h1>
+          <p class="dashboard-page-subtitle">Booking #GP-2025-1214 — Wedding Reception</p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Invoice</button>
+      </div>
+      <div class="invoice-card">
+        <div class="invoice-header">
+          <div>
+            <div class="invoice-logo">Grand Palais</div>
+            <div style="font-size:var(--fs-xs);color:var(--text-tertiary);margin-top:var(--space-1)">Grand Palais Boulevard, Bandra West, Mumbai 400 050</div>
+          </div>
+          <div class="invoice-number">
+            <div style="font-size:var(--fs-lg);font-weight:700;color:var(--text-primary)">INVOICE</div>
+            <div style="font-size:var(--fs-sm)">#GP-INV-2025-1214</div>
+            <div style="font-size:var(--fs-xs);margin-top:var(--space-1);opacity:0.6">Date: July 14, 2025</div>
+            <div style="font-size:var(--fs-xs);opacity:0.6">Due: August 14, 2025</div>
+          </div>
+        </div>
+        <div class="invoice-body">
+          <div class="invoice-info-grid">
+            <div>
+              <div style="font-size:var(--fs-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-3)">Billed To</div>
+              <div style="font-size:var(--fs-base);font-weight:600;color:var(--text-primary)">Priya & Rohan Mehta</div>
+              <div style="font-size:var(--fs-sm);color:var(--text-tertiary);margin-top:var(--space-2);line-height:1.7">priya.mehta@email.com<br>+91 98765 43210<br>Andheri West, Mumbai</div>
+            </div>
+            <div>
+              <div style="font-size:var(--fs-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-3)">Event Details</div>
+              <div style="font-size:var(--fs-sm);color:var(--text-secondary);line-height:1.7">
+                Event: Wedding Reception<br>
+                Date: December 14, 2025<br>
+                Hall: The Royal Ballroom<br>
+                Duration: 12 Hours (7 PM — 7 AM)
+              </div>
+            </div>
+          </div>
+          <div class="invoice-line-items">
+            <div class="invoice-line-header">
+              <span>Description</span><span>Qty</span><span>Unit Price</span><span style="text-align:right">Total</span>
+            </div>
+            <div class="invoice-line">
+              <span style="color:var(--text-secondary)">Royal Ballroom Hire (12 hrs)</span>
+              <span style="color:var(--text-tertiary)">1</span>
+              <span style="color:var(--text-tertiary)">?5,00,000</span>
+              <span style="color:var(--text-primary);text-align:right">?5,00,000</span>
+            </div>
+            <div class="invoice-line">
+              <span style="color:var(--text-secondary)">Catering — Multi-cuisine Buffet (per head)</span>
+              <span style="color:var(--text-tertiary)">500</span>
+              <span style="color:var(--text-tertiary)">?2,500</span>
+              <span style="color:var(--text-primary);text-align:right">?12,50,000</span>
+            </div>
+            <div class="invoice-line">
+              <span style="color:var(--text-secondary)">Premium Décor & Floral Installations</span>
+              <span style="color:var(--text-tertiary)">1</span>
+              <span style="color:var(--text-tertiary)">?3,50,000</span>
+              <span style="color:var(--text-primary);text-align:right">?3,50,000</span>
+            </div>
+            <div class="invoice-line">
+              <span style="color:var(--text-secondary)">Valet Parking Service</span>
+              <span style="color:var(--text-tertiary)">1</span>
+              <span style="color:var(--text-tertiary)">?75,000</span>
+              <span style="color:var(--text-primary);text-align:right">?75,000</span>
+            </div>
+          </div>
+          <div class="invoice-totals">
+            <div class="invoice-total-row"><span>Subtotal</span><span>?21,75,000</span></div>
+            <div class="invoice-total-row"><span>GST (18%)</span><span>?3,91,500</span></div>
+            <div class="invoice-total-row"><span style="color:var(--success)">Gold Member Discount (10%)</span><span style="color:var(--success)">-?2,17,500</span></div>
+            <div class="invoice-total-row total"><span>Total Amount</span><span class="invoice-total-amount">?23,49,000</span></div>
+          </div>
+          <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--dark-border)">
+            <div style="font-size:var(--fs-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-3)">Payment Schedule</div>
+            <div class="dashboard-payment-schedule">
+              <div style="background:var(--success-bg);border:1px solid rgba(76,175,80,0.2);border-radius:var(--radius-md);padding:var(--space-4)"><div style="font-size:var(--fs-xs);color:var(--success);margin-bottom:var(--space-1)">Paid — Booking Deposit</div><div style="font-size:var(--fs-base);font-weight:600;color:var(--text-primary)">?5,00,000</div><div style="font-size:var(--fs-xs);color:var(--text-muted)">Jul 14, 2025</div></div>
+              <div style="background:var(--gold-glass);border:1px solid rgba(201,162,39,0.2);border-radius:var(--radius-md);padding:var(--space-4)"><div style="font-size:var(--fs-xs);color:var(--gold);margin-bottom:var(--space-1)">Due — Second Instalment</div><div style="font-size:var(--fs-base);font-weight:600;color:var(--text-primary)">?10,00,000</div><div style="font-size:var(--fs-xs);color:var(--text-muted)">Oct 14, 2025</div></div>
+              <div style="background:var(--glass-bg);border:1px solid var(--dark-border);border-radius:var(--radius-md);padding:var(--space-4)"><div style="font-size:var(--fs-xs);color:var(--text-tertiary);margin-bottom:var(--space-1)">Balance — Final Payment</div><div style="font-size:var(--fs-base);font-weight:600;color:var(--text-primary)">?8,49,000</div><div style="font-size:var(--fs-xs);color:var(--text-muted)">Dec 7, 2025</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- PAYMENTS PANEL ----------------------------------- -->
+    <div class="dashboard-panel" data-panel-id="payments">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Payment History</h1>
+          <p class="dashboard-page-subtitle">All transactions related to your bookings.</p>
+        </div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);overflow:hidden">
+        <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--dark-border);display:flex;justify-content:space-between;align-items:center">
+          <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg);font-weight:300">Transaction Log</h3>
+          <select class="form-select" style="width:auto;padding:var(--space-2) var(--space-4);font-size:var(--fs-sm)"><option>All Transactions</option><option>2025</option><option>2024</option></select>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon credit"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="payment-details">
+            <div class="payment-title">Booking Deposit — Wedding Reception (#GP-2025-1214)</div>
+            <div class="payment-date">July 14, 2025 — UPI Transfer — Ref: HDFC8723981</div>
+          </div>
+          <div class="payment-amount debit">-&#x20B9;5,00,000</div>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon credit"><i class="fa-solid fa-gem"></i></div>
+          <div class="payment-details">
+            <div class="payment-title">Gold Member Reward Credit</div>
+            <div class="payment-date">July 14, 2025 — Loyalty Program</div>
+          </div>
+          <div class="payment-amount credit">+&#x20B9;25,000</div>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon credit"><i class="fa-solid fa-credit-card"></i></div>
+          <div class="payment-details">
+            <div class="payment-title">Full Payment — Anniversary Dinner (#GP-2024-0820)</div>
+            <div class="payment-date">August 18, 2024 — Credit Card — Ref: ICICI5519327</div>
+          </div>
+          <div class="payment-amount debit">-&#x20B9;1,80,000</div>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon credit" style="background:var(--success-bg);color:var(--success)"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="payment-details">
+            <div class="payment-title">Partial Refund — Décor Downgrade</div>
+            <div class="payment-date">September 2, 2024 — Bank Transfer — Ref: REF-2024-9938</div>
+          </div>
+          <div class="payment-amount credit">+&#x20B9;25,000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- PROFILE PANEL ------------------------------------ -->
+    <div class="dashboard-panel" data-panel-id="profile">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">My Profile</h1>
+          <p class="dashboard-page-subtitle">Manage your personal and contact information.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="editProfileBtn">Edit Profile</button>
+      </div>
+      <div class="profile-header-card">
+        <div class="profile-avatar-lg">P</div>
+        <div>
+          <h2 style="font-family:var(--font-serif);font-size:var(--fs-2xl);color:var(--text-primary);font-weight:300">Priya Mehta</h2>
+          <div style="font-size:var(--fs-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-top:var(--space-1)">Gold Member — Client Since 2024</div>
+          <div style="display:flex;gap:var(--space-5);margin-top:var(--space-4);flex-wrap:wrap">
+            <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-envelope"></i> priya.mehta@email.com</span>
+            <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-phone"></i> +91 98765 43210</span>
+            <span style="font-size:var(--fs-sm);color:var(--text-tertiary)"><i class="fa-solid fa-location-dot"></i> Andheri West, Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-profile-grid">
+        <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:var(--space-8)">
+          <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg);font-weight:300;margin-bottom:var(--space-6)">Personal Information</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+            <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input" value="Priya Mehta" readonly style="opacity:0.7" /></div>
+            <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" value="priya.mehta@email.com" readonly style="opacity:0.7" /></div>
+            <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" value="+91 98765 43210" readonly style="opacity:0.7" /></div>
+            <div class="form-group"><label class="form-label">Date of Birth</label><input type="text" class="form-input" value="March 15, 1988" readonly style="opacity:0.7" /></div>
+          </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:var(--space-8)">
+          <h3 style="font-family:var(--font-serif);color:var(--text-primary);font-size:var(--fs-lg);font-weight:300;margin-bottom:var(--space-6)">Address & Preferences</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+            <div class="form-group"><label class="form-label">Address</label><textarea class="form-input" rows="2" readonly style="opacity:0.7">B-403, Skyline Towers, Andheri West, Mumbai 400 058</textarea></div>
+            <div class="form-group"><label class="form-label">Preferred Language</label><input type="text" class="form-input" value="English / Hindi" readonly style="opacity:0.7" /></div>
+            <div class="form-group"><label class="form-label">Dietary Preferences</label><input type="text" class="form-input" value="Vegetarian" readonly style="opacity:0.7" /></div>
+            <div class="form-group"><label class="form-label">Special Notes</label><input type="text" class="form-input" value="Prefers evening events" readonly style="opacity:0.7" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -- SETTINGS PANEL ----------------------------------- -->
+    <div class="dashboard-panel" data-panel-id="settings">
+      <div class="dashboard-page-header">
+        <div>
+          <h1 class="dashboard-page-title">Settings</h1>
+          <p class="dashboard-page-subtitle">Manage your account preferences and notifications.</p>
+        </div>
+      </div>
+
+      <div class="settings-section-card">
+        <div class="settings-section-header">
+          <h3 class="settings-section-title">Notification Preferences</h3>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>Email Notifications</h6><p>Receive booking confirmations and updates via email</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" checked /><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>SMS Alerts</h6><p>Receive text messages for important booking updates</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" checked /><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>WhatsApp Updates</h6><p>Get event reminders and team messages on WhatsApp</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" /><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>Marketing Communications</h6><p>Exclusive offers, seasonal promotions, and new services</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" checked /><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+
+      <div class="settings-section-card">
+        <div class="settings-section-header">
+          <h3 class="settings-section-title">Privacy & Security</h3>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>Two-Factor Authentication</h6><p>Add an extra layer of security to your account</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" /><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-info"><h6>Public Profile</h6><p>Allow Grand Palais to feature your events in our portfolio</p></div>
+          <label class="toggle-switch"><input type="checkbox" class="toggle-input" checked /><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+
+      <div class="settings-section-card">
+        <div class="settings-section-header">
+          <h3 class="settings-section-title">Account Actions</h3>
+        </div>
+        <div style="padding:var(--space-6)">
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap">
+            <button class="btn btn-ghost">Change Password</button>
+            <button class="btn btn-ghost">Download My Data</button>
+            <button class="btn btn-ghost" style="color:var(--error);border-color:rgba(244,67,54,0.3)">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- end dashboard-main -->
+</div><!-- end dashboard-wrapper -->
+
+<!-- Mobile Sidebar Toggle -->
+<button class="sidebar-toggle" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars"></i></button>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

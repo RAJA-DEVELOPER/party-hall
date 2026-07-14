@@ -1,0 +1,387 @@
+/* ============================================================
+   GRAND PALAIS — Home 2 Page Styles
+   ============================================================ */
+
+/* ── Section 1: Signature Experiences ──────────────────── */
+.experiences-section { background: var(--bg-section-alt); }
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.experience-card {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.experience-card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--duration-slowest) var(--ease-out);
+  position: relative;
+}
+
+.experience-card:hover .experience-card-image {
+  transform: scale(1.08);
+}
+
+.experience-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0.1) 60%);
+  transition: background var(--duration-slow) var(--ease-out);
+}
+
+.experience-card:hover .experience-card-overlay {
+  background: linear-gradient(0deg, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.4) 60%);
+}
+
+.experience-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-8);
+}
+
+.experience-card-content h3 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  color: var(--white);
+  margin-bottom: var(--space-2);
+}
+
+.experience-card-content p {
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,0.6);
+  max-width: none;
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-slow);
+}
+
+.experience-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .experiences-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Section 3: Venue Highlights ──────────────────────── */
+.highlights-section { background: var(--bg-section-alt); }
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.highlight-card {
+  text-align: center;
+  padding: var(--space-10) var(--space-8);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-base);
+}
+.highlight-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 40px rgba(201,162,39,0.1);
+  transform: translateY(-4px);
+}
+
+.highlight-icon {
+  font-size: var(--fs-5xl);
+  margin-bottom: var(--space-5);
+  display: block;
+  color: var(--gold);
+}
+
+.highlight-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.highlight-desc {
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 900px) { .highlights-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .highlights-grid { grid-template-columns: 1fr; } }
+
+/* ── Section 4: Pricing ────────────────────────────────── */
+.pricing-section { background: var(--bg-section-alt); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10) var(--space-8);
+  position: relative;
+  transition: var(--transition-slow);
+}
+.pricing-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 40px rgba(201,162,39,0.1);
+  transform: translateY(-4px);
+}
+
+.pricing-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(201,162,39,0.04) 0%, var(--bg-card) 100%);
+  transform: scale(1.04);
+}
+.pricing-card.featured:hover {
+  box-shadow: 0 12px 48px rgba(201,162,39,0.15);
+  transform: scale(1.04) translateY(-4px);
+}
+
+.pricing-popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-gold);
+  color: var(--black);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-5);
+  border-radius: var(--radius-full);
+}
+
+.pricing-plan-name {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+
+.pricing-amount {
+  font-family: var(--font-serif);
+  font-size: var(--fs-4xl);
+  color: var(--text-primary);
+  font-weight: var(--fw-light);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.pricing-amount span {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+}
+
+.pricing-period {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.pricing-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin-bottom: var(--space-6);
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+}
+
+.pricing-feature-icon {
+  color: var(--success);
+  font-size: var(--fs-base);
+  flex-shrink: 0;
+}
+
+.pricing-feature-icon.excluded { color: var(--text-muted); }
+.pricing-feature.excluded span  { color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.featured { transform: none; }
+}
+
+/* ── Section 5: Process ────────────────────────────────── */
+.process-section { background: var(--bg-section-alt); }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent);
+  opacity: 0.6;
+  border-radius: var(--radius-full);
+}
+
+.process-step {
+  text-align: center;
+  padding: 0 var(--space-5);
+  position: relative;
+}
+
+.process-step-number {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  color: var(--gold);
+  font-weight: var(--fw-light);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.process-step-desc {
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 900px) {
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
+  .process-steps::before { display: none; }
+}
+@media (max-width: 480px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
+
+/* ── Section 6: Partners ───────────────────────────────── */
+.partners-section { background: var(--bg-section-alt); }
+
+.partners-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  overflow: hidden;
+}
+
+.partners-track {
+  display: flex;
+  gap: var(--space-12);
+  animation: partnersScroll 24s linear infinite;
+  align-items: center;
+}
+
+.partner-logo {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-light);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  letter-spacing: var(--ls-wider);
+  transition: color var(--duration-base) var(--ease-out);
+  cursor: default;
+}
+
+.partner-logo i {
+  font-size: var(--fs-3xl);
+  color: var(--text-muted);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.partner-logo:hover { color: var(--gold); }
+.partner-logo:hover i { color: var(--gold); }
+
+@keyframes partnersScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Section 8: Instagram Grid ─────────────────────────── */
+.insta-section { background: var(--bg-primary); }
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-3);
+}
+
+.insta-item {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.insta-item-image {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.insta-item:hover .insta-item-image { transform: scale(1.1); }
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(201,162,39,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  font-size: var(--fs-xl);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.insta-item:hover .insta-overlay { opacity: 1; }
+
+@media (max-width: 768px)  { .insta-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px)  { .insta-grid { grid-template-columns: repeat(2, 1fr); } }

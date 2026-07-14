@@ -1,0 +1,129 @@
+/* ============================================================
+   GRAND PALAIS — Theme System (Dark / Light)
+   Inline in <head> before main.css so it applies immediately
+   ============================================================ */
+
+/* ── Light Theme Overrides ──────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:      var(--ivory);
+  --bg-secondary:    var(--ivory-dark);
+  --bg-card:         var(--white);
+  --bg-elevated:     var(--ivory-mid);
+  --bg-body:         var(--ivory);
+  --bg-inverse:      var(--black);
+  --bg-section-alt:  var(--ivory-dark);
+
+  --text-primary:    var(--black);
+  --text-secondary:  rgba(17,17,17,0.75);
+  --text-tertiary:   rgba(17,17,17,0.55);
+  --text-muted:      rgba(17,17,17,0.35);
+  --text-inverse:    var(--white);
+
+  --border-color:    rgba(17,17,17,0.08);
+  --border-light:    rgba(17,17,17,0.04);
+
+  --shadow-color:    rgba(0,0,0,0.06);
+  --shadow-color-lg: rgba(0,0,0,0.1);
+
+  --glass-bg:     rgba(255,255,255,0.7);
+  --glass-bg-md:  rgba(255,255,255,0.8);
+  --glass-bg-lg:  rgba(255,255,255,0.9);
+  --glass-border: rgba(255,255,255,0.3);
+
+  --gradient-dark:  linear-gradient(180deg, var(--ivory) 0%, var(--ivory-dark) 100%);
+}
+
+/* ── Light-bg alternating sections need dark text in dark mode ── */
+[data-theme="dark"] .section-bg-ivory,
+[data-theme="dark"] .about-teaser,
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .experiences-section,
+[data-theme="dark"] .highlights-section,
+[data-theme="dark"] .pricing-section,
+[data-theme="dark"] .process-section,
+[data-theme="dark"] .partners-section,
+[data-theme="dark"] .contact-section,
+[data-theme="dark"] .map-section,
+[data-theme="dark"] .card-service,
+[data-theme="dark"] [style*="background:var(--bg-section-alt)"] {
+  --text-primary:    var(--black);
+  --text-secondary:  rgba(17,17,17,0.75);
+  --text-tertiary:   rgba(17,17,17,0.55);
+  --text-muted:      rgba(17,17,17,0.35);
+}
+
+/* ── .section-bg-dark always stays dark in light mode ──── */
+[data-theme="light"] .section-bg-dark {
+  --bg-primary:     var(--black);
+  --text-primary:   var(--white);
+  --text-secondary: rgba(255,255,255,0.75);
+  --text-tertiary:  rgba(255,255,255,0.55);
+  --text-muted:     rgba(255,255,255,0.35);
+}
+
+/* ── Sections hardcoded to black always stay dark ──────── */
+[data-theme="light"] [style*="background:var(--black)"] {
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+  --border-color:    rgba(255,255,255,0.15);
+  --glass-bg:        rgba(255,255,255,0.06);
+}
+
+/* ── Smooth transitions for theme switch ────────────────── */
+html,
+html *,
+html *::before,
+html *::after {
+  transition: background-color var(--duration-base) var(--ease-out),
+              color var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+/* ── Hero sections always stay dark ─────────────────────── */
+[data-theme="light"] .hero-v2,
+[data-theme="light"] .hero-fullscreen,
+[data-theme="light"] .hero-slider {
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+  --border-color:    rgba(255,255,255,0.15);
+  --glass-bg:        rgba(255,255,255,0.06);
+}
+
+/* ── Footer always stays dark ───────────────────────────── */
+[data-theme="light"] .footer {
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+  --border-color:    rgba(255,255,255,0.15);
+  --glass-bg:        rgba(255,255,255,0.06);
+}
+
+/* ── Dashboard sidebar always stays dark ────────────────── */
+[data-theme="light"] .dashboard-sidebar {
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+  --border-color:    rgba(255,255,255,0.15);
+  --glass-bg:        rgba(255,255,255,0.06);
+}
+
+/* ── Transparent navbar on dark hero needs light text ──── */
+[data-theme="light"] .navbar.transparent {
+  --text-primary:   var(--white);
+  --text-secondary: rgba(255,255,255,0.75);
+  --text-muted:     rgba(255,255,255,0.35);
+  --border-color:   rgba(255,255,255,0.15);
+  --glass-bg:       rgba(255,255,255,0.06);
+}
+
+/* ── Breadcrumbs always stay dark (in hero overlay) ─────── */
+[data-theme="light"] .breadcrumbs {
+  color: var(--text-tertiary);
+}

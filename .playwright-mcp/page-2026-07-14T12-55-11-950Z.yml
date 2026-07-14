@@ -1,0 +1,303 @@
+- generic [active] [ref=f3e1]:
+  - navigation "Main navigation" [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Grand Palais Home" [ref=f3e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f3e5]: GP
+        - generic [ref=f3e6]:
+          - generic [ref=f3e7]: Grand Palais
+          - generic [ref=f3e8]: Luxury Venue
+      - navigation "Primary navigation" [ref=f3e9]:
+        - link "Home" [ref=f3e10] [cursor=pointer]:
+          - /url: index.html
+        - link "Home2" [ref=f3e11] [cursor=pointer]:
+          - /url: home2.html
+        - link "About" [ref=f3e12] [cursor=pointer]:
+          - /url: about.html
+        - link "Services" [ref=f3e13] [cursor=pointer]:
+          - /url: services.html
+        - link "Gallery" [ref=f3e14] [cursor=pointer]:
+          - /url: gallery.html
+        - link "Contact" [ref=f3e15] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=f3e16]:
+        - link "Sign In" [ref=f3e17] [cursor=pointer]:
+          - /url: login.html
+        - button "Switch to RTL" [ref=f3e18] [cursor=pointer]:
+          - img [ref=f3e19]:
+            - generic [ref=f3e20]: A
+  - dialog "Mobile navigation":
+    - link "Home":
+      - /url: index.html
+    - link "Home2":
+      - /url: home2.html
+    - link "About":
+      - /url: about.html
+    - link "Services":
+      - /url: services.html
+    - link "Gallery":
+      - /url: gallery.html
+    - link "Contact":
+      - /url: contact.html
+  - region "About page hero" [ref=f3e22]:
+    - img "Grand Palais banquet hall" [ref=f3e24]
+    - generic [ref=f3e27]:
+      - navigation "Breadcrumb" [ref=f3e28]:
+        - generic [ref=f3e29]:
+          - link "Home" [ref=f3e30] [cursor=pointer]:
+            - /url: index.html
+          - generic [ref=f3e31]: 
+          - generic: About
+      - generic [ref=f3e33]: Our Story
+      - heading [level=1] [ref=f3e34]:
+        - text: Crafting Legends
+        - emphasis [ref=f3e35]: Since 2008
+  - region [ref=f3e36]:
+    - generic [ref=f3e38]:
+      - img "Grand Palais luxury interior" [ref=f3e41]
+      - generic [ref=f3e43]:
+        - generic [ref=f3e44]: The Beginning
+        - heading [level=2] [ref=f3e45]:
+          - text: A Vision Bornfrom
+          - emphasis [ref=f3e46]: Passion
+        - paragraph [ref=f3e47]: Grand Palais was founded in 2008 by Vikram Malhotra, a visionary hotelier who believed that every celebration deserved the grandeur of a five-star experience. Beginning with a single 2,000 sq ft hall in South Mumbai, the brand quickly became synonymous with uncompromising luxury.
+        - blockquote [ref=f3e48]:
+          - text: "\"A great celebration isn't measured in square feet. It's measured in the emotions it creates and the memories it leaves behind.\""
+          - generic [ref=f3e49]: — Vikram Malhotra, Founder
+        - paragraph [ref=f3e50]: Today, Grand Palais spans 85,000 sq ft across three floors, featuring seven distinct event spaces, two in-house restaurants, and a dedicated floral design studio — all under one magnificent roof in the heart of Bandra West.
+  - region [ref=f3e51]:
+    - generic [ref=f3e52]:
+      - generic [ref=f3e53]:
+        - generic [ref=f3e54]: Purpose & Values
+        - heading [level=2] [ref=f3e55]:
+          - text: What
+          - emphasis [ref=f3e56]: Drives
+          - text: Us
+      - generic [ref=f3e57]:
+        - generic [ref=f3e58]:
+          - generic [ref=f3e59]: 
+          - heading "Our Mission" [level=3] [ref=f3e61]
+          - paragraph [ref=f3e62]: To create extraordinary celebrations that transcend expectations — where meticulous attention to detail, world-class service, and inspired creativity converge to produce moments that last a lifetime.
+        - generic [ref=f3e63]:
+          - generic [ref=f3e64]: 
+          - heading "Our Vision" [level=3] [ref=f3e66]
+          - paragraph [ref=f3e67]: To be recognized globally as India's most prestigious event venue — setting new standards in luxury hospitality and event curation that inspire the entire industry.
+      - generic [ref=f3e68]:
+        - generic [ref=f3e69]:
+          - generic [ref=f3e70]: 
+          - heading "Excellence" [level=4] [ref=f3e72]
+          - paragraph [ref=f3e73]: We never settle for good — we pursue extraordinary in every single detail.
+        - generic [ref=f3e74]:
+          - generic [ref=f3e75]: 
+          - heading "Integrity" [level=4] [ref=f3e77]
+          - paragraph [ref=f3e78]: Transparent pricing, honest communication, and promises we always keep.
+        - generic [ref=f3e79]:
+          - generic [ref=f3e80]: 
+          - heading "Creativity" [level=4] [ref=f3e82]
+          - paragraph [ref=f3e83]: Each event is a canvas — we paint masterpieces tailored exclusively for you.
+  - region [ref=f3e84]:
+    - generic [ref=f3e85]:
+      - generic [ref=f3e86]:
+        - generic [ref=f3e87]: Meet the Team
+        - heading [level=2] [ref=f3e88]:
+          - text: The VisionariesBehind
+          - emphasis [ref=f3e89]: Every Event
+      - generic [ref=f3e90]:
+        - generic [ref=f3e91]:
+          - img "Vikram Malhotra - Founder" [ref=f3e94]
+          - generic [ref=f3e95]:
+            - heading "Vikram Malhotra" [level=3] [ref=f3e96]
+            - generic [ref=f3e97]: Founder & Chairman
+            - paragraph [ref=f3e98]: A visionary with 25 years in luxury hospitality, Vikram's eye for perfection defines the Grand Palais standard.
+        - generic [ref=f3e99]:
+          - img "Priya Sharma - Director" [ref=f3e102]
+          - generic [ref=f3e103]:
+            - heading "Priya Sharma" [level=3] [ref=f3e104]
+            - generic [ref=f3e105]: Director of Events
+            - paragraph [ref=f3e106]: With over 800 weddings and galas to her credit, Priya transforms dreams into breathtaking realities.
+        - generic [ref=f3e107]:
+          - img "Arjun Nair - Executive Chef" [ref=f3e110]
+          - generic [ref=f3e111]:
+            - heading "Arjun Nair" [level=3] [ref=f3e112]
+            - generic [ref=f3e113]: Executive Chef
+            - paragraph [ref=f3e114]: Trained in Paris and Tokyo, Chef Arjun leads our culinary team to create unforgettable gastronomic experiences.
+        - generic [ref=f3e115]:
+          - img "Kavya Reddy - Head of Design" [ref=f3e118]
+          - generic [ref=f3e119]:
+            - heading "Kavya Reddy" [level=3] [ref=f3e120]
+            - generic [ref=f3e121]: Head of Design
+            - paragraph [ref=f3e122]: Award-winning event designer whose transformative décor installations have been featured in Vogue India.
+  - region [ref=f3e123]:
+    - generic [ref=f3e124]:
+      - generic [ref=f3e125]:
+        - generic [ref=f3e126]: Recognition
+        - heading [level=2] [ref=f3e127]:
+          - text: Awards &
+          - emphasis [ref=f3e128]: Accolades
+      - generic [ref=f3e129]:
+        - generic [ref=f3e130]:
+          - generic [ref=f3e131]: 
+          - generic [ref=f3e133]:
+            - generic [ref=f3e134]: "2024"
+            - heading "India's Best Luxury Venue" [level=3] [ref=f3e135]
+            - paragraph [ref=f3e136]: Conde Nast Traveller India Awards — voted by readers across India for the third consecutive year.
+        - generic [ref=f3e137]:
+          - generic [ref=f3e138]: 
+          - generic [ref=f3e140]:
+            - generic [ref=f3e141]: "2023"
+            - heading "5-Star Event Venue Certification" [level=3] [ref=f3e142]
+            - paragraph [ref=f3e143]: Awarded by the Federation of Hotel & Restaurant Associations of India (FHRAI) for hospitality excellence.
+        - generic [ref=f3e144]:
+          - generic [ref=f3e145]: 
+          - generic [ref=f3e147]:
+            - generic [ref=f3e148]: "2023"
+            - heading "Best Wedding Venue — Mumbai" [level=3] [ref=f3e149]
+            - paragraph [ref=f3e150]: WeddingWire Couples Choice Award — recipient for 8 consecutive years based on genuine client reviews.
+        - generic [ref=f3e151]:
+          - generic [ref=f3e152]: 
+          - generic [ref=f3e154]:
+            - generic [ref=f3e155]: "2022"
+            - heading "Culinary Excellence Award" [level=3] [ref=f3e156]
+            - paragraph [ref=f3e157]: Times Food & Nightlife Awards — recognizing our culinary team's outstanding contribution to event dining.
+        - generic [ref=f3e158]:
+          - generic [ref=f3e159]: 
+          - generic [ref=f3e161]:
+            - generic [ref=f3e162]: "2022"
+            - heading "Sustainability Champion" [level=3] [ref=f3e163]
+            - paragraph [ref=f3e164]: Green Hospitality Council — for our commitment to zero-waste events, solar power, and local sourcing initiatives.
+        - generic [ref=f3e165]:
+          - generic [ref=f3e166]: 
+          - generic [ref=f3e168]:
+            - generic [ref=f3e169]: "2021"
+            - heading "Luxury Brand of the Year" [level=3] [ref=f3e170]
+            - paragraph [ref=f3e171]: Economic Times Hospitality Awards — recognizing a decade of redefining luxury event experiences in India.
+  - region [ref=f3e172]:
+    - generic [ref=f3e173]:
+      - generic [ref=f3e174]:
+        - generic [ref=f3e175]: Behind the Scenes
+        - heading [level=2] [ref=f3e176]:
+          - text: The
+          - emphasis [ref=f3e177]: Art & Craft
+          - text: of Perfection
+        - paragraph [ref=f3e178]: Months of planning, hundreds of hands, and thousands of decisions — all for your perfect day.
+      - generic [ref=f3e179]:
+        - img "Behind the scenes floral arrangement" [ref=f3e181]
+        - img "Behind the scenes catering preparation" [ref=f3e184]
+        - img "Behind the scenes venue preparation" [ref=f3e187]
+  - region [ref=f3e189]:
+    - generic [ref=f3e190]:
+      - generic [ref=f3e191]:
+        - generic [ref=f3e192]: Our Journey
+        - heading [level=2] [ref=f3e193]:
+          - text: Milestones of
+          - emphasis [ref=f3e194]: Excellence
+      - generic [ref=f3e195]:
+        - generic [ref=f3e196]:
+          - generic [ref=f3e197]: "08"
+          - generic [ref=f3e198]:
+            - generic [ref=f3e199]: "2008"
+            - heading "Grand Palais Opens" [level=3] [ref=f3e200]
+            - paragraph [ref=f3e201]: "Vikram Malhotra inaugurates a 2,000 sq ft hall in South Mumbai. First booking: a corporate gala for 200 guests."
+        - generic [ref=f3e202]:
+          - generic [ref=f3e203]: "12"
+          - generic [ref=f3e204]:
+            - generic [ref=f3e205]: "2012"
+            - heading "The Royal Ballroom Unveiled" [level=3] [ref=f3e206]
+            - paragraph [ref=f3e207]: A landmark ₹25 crore expansion introduces the iconic 12,000 sq ft Royal Ballroom, setting a new standard for luxury in Mumbai.
+        - generic [ref=f3e208]:
+          - generic [ref=f3e209]: "16"
+          - generic [ref=f3e210]:
+            - generic [ref=f3e211]: "2016"
+            - heading "1,000th Event Milestone" [level=3] [ref=f3e212]
+            - paragraph [ref=f3e213]: Grand Palais hosts its 1,000th event — a Bollywood A-lister wedding that makes headlines across India.
+        - generic [ref=f3e214]:
+          - generic [ref=f3e215]: "20"
+          - generic [ref=f3e216]:
+            - generic [ref=f3e217]: "2020"
+            - heading "Digital & Virtual Events" [level=3] [ref=f3e218]
+            - paragraph [ref=f3e219]: Grand Palais pioneers hybrid event technology, becoming India's first venue to offer fully produced virtual galas.
+        - generic [ref=f3e220]:
+          - generic [ref=f3e221]: "24"
+          - generic [ref=f3e222]:
+            - generic [ref=f3e223]: "2024"
+            - heading "The Grand Palais Complex" [level=3] [ref=f3e224]
+            - paragraph [ref=f3e225]: A visionary ₹150 crore expansion completing 85,000 sq ft of event space, seven halls, and the iconic Glass Pavilion.
+  - region [ref=f3e226]:
+    - generic [ref=f3e229]:
+      - generic [ref=f3e230]: Experience It First
+      - heading [level=2] [ref=f3e231]:
+        - text: Book a Private
+        - emphasis [ref=f3e232]: Venue Tour
+      - paragraph [ref=f3e233]: Walk through our magnificent spaces, meet our event team, and envision your celebration coming to life — all in a private, pressure-free consultation.
+      - generic [ref=f3e234]:
+        - link "Schedule a Tour" [ref=f3e235] [cursor=pointer]:
+          - /url: contact.html
+        - link "View Gallery" [ref=f3e236] [cursor=pointer]:
+          - /url: gallery.html
+  - contentinfo [ref=f3e237]:
+    - generic [ref=f3e238]:
+      - generic [ref=f3e239]:
+        - generic [ref=f3e240]:
+          - link "GP Grand Palais Luxury Venue" [ref=f3e241] [cursor=pointer]:
+            - /url: index.html
+            - generic [ref=f3e242]: GP
+            - generic [ref=f3e243]:
+              - generic [ref=f3e244]: Grand Palais
+              - generic [ref=f3e245]: Luxury Venue
+          - paragraph [ref=f3e246]: Mumbai's most prestigious luxury banquet hall — where exceptional service meets timeless elegance.
+          - generic [ref=f3e247]:
+            - link "Instagram" [ref=f3e248] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f3e249]: 
+            - link "Facebook" [ref=f3e250] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f3e251]: 
+            - link "YouTube" [ref=f3e252] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f3e253]: 
+        - generic [ref=f3e254]:
+          - heading "Explore" [level=3] [ref=f3e255]
+          - list [ref=f3e256]:
+            - listitem [ref=f3e257]:
+              - link "About Us" [ref=f3e258] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=f3e259]:
+              - link "Services" [ref=f3e260] [cursor=pointer]:
+                - /url: services.html
+            - listitem [ref=f3e261]:
+              - link "Gallery" [ref=f3e262] [cursor=pointer]:
+                - /url: gallery.html
+            - listitem [ref=f3e263]:
+              - link "Contact" [ref=f3e264] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=f3e265]:
+          - heading "Events" [level=3] [ref=f3e266]
+          - list [ref=f3e267]:
+            - listitem [ref=f3e268]:
+              - link "Weddings" [ref=f3e269] [cursor=pointer]:
+                - /url: services.html
+            - listitem [ref=f3e270]:
+              - link "Corporate" [ref=f3e271] [cursor=pointer]:
+                - /url: services.html
+            - listitem [ref=f3e272]:
+              - link "Private Parties" [ref=f3e273] [cursor=pointer]:
+                - /url: services.html
+        - generic [ref=f3e274]:
+          - heading "Contact" [level=3] [ref=f3e275]
+          - list [ref=f3e276]:
+            - listitem [ref=f3e277]: Bandra West, Mumbai 400 050
+            - listitem [ref=f3e278]:
+              - link "+91 22 1234 5678" [ref=f3e279] [cursor=pointer]:
+                - /url: tel:+912212345678
+            - listitem [ref=f3e280]:
+              - link "info@grandpalais.in" [ref=f3e281] [cursor=pointer]:
+                - /url: mailto:info@grandpalais.in
+      - generic [ref=f3e282]:
+        - paragraph [ref=f3e283]: © 2025 Grand Palais Luxury Venues Pvt. Ltd. All rights reserved.
+        - generic [ref=f3e284]:
+          - link "Privacy" [ref=f3e285] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms" [ref=f3e286] [cursor=pointer]:
+            - /url: "#"
+  - button "Back to top":
+    - generic: 

@@ -1,0 +1,192 @@
+/* ============================================================
+   GRAND PALAIS — Design Tokens & CSS Custom Properties
+   ============================================================ */
+
+:root {
+  /* ── Brand Colors ─────────────────────────────────────── */
+  --gold:         #C9A227;
+  --gold-light:   #E8C547;
+  --gold-pale:    #F0DFA0;
+  --gold-dark:    #9A7A1E;
+  --gold-muted:   rgba(201, 162, 39, 0.15);
+  --gold-glass:   rgba(201, 162, 39, 0.08);
+
+  --black:        #111111;
+  --black-soft:   #1A1A1A;
+  --black-card:   #1E1E1E;
+  --black-hover:  #242424;
+  --charcoal:     #2C2C2C;
+  --dark-border:  var(--border-color);
+
+  --ivory:        #F8F6F0;
+  --ivory-dark:   #EDE9DF;
+  --ivory-mid:    #F3F0E8;
+
+  --white:        #FFFFFF;
+  --off-white:    #FAFAFA;
+
+  /* ── Semantic Colors ──────────────────────────────────── */
+  --success:      #4CAF50;
+  --warning:      #FF9800;
+  --error:        #F44336;
+  --info:         #2196F3;
+
+  --success-bg:   rgba(76, 175, 80, 0.1);
+  --warning-bg:   rgba(255, 152, 0, 0.1);
+  --error-bg:     rgba(244, 67, 54, 0.1);
+
+  /* ── Typography ──────────────────────────────────────── */
+  --font-serif:   'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Poppins', 'Inter', -apple-system, sans-serif;
+  --font-body:    'Inter', 'Poppins', -apple-system, sans-serif;
+
+  /* Font Sizes — Fluid Type Scale */
+  --fs-xs:   0.75rem;    /*  12px */
+  --fs-sm:   0.875rem;   /*  14px */
+  --fs-base: 1rem;       /*  16px */
+  --fs-md:   1.125rem;   /*  18px */
+  --fs-lg:   1.25rem;    /*  20px */
+  --fs-xl:   1.5rem;     /*  24px */
+  --fs-2xl:  1.875rem;   /*  30px */
+  --fs-3xl:  2.25rem;    /*  36px */
+  --fs-4xl:  3rem;       /*  48px */
+  --fs-5xl:  3.75rem;    /*  60px */
+  --fs-6xl:  4.5rem;     /*  72px */
+  --fs-7xl:  6rem;       /*  96px */
+
+  /* Font Weights */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  /* Line Heights */
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.75;
+  --lh-loose:   2;
+
+  /* Letter Spacing */
+  --ls-tight:   -0.025em;
+  --ls-normal:   0;
+  --ls-wide:     0.05em;
+  --ls-wider:    0.1em;
+  --ls-widest:   0.2em;
+
+  /* ── Spacing Scale ────────────────────────────────────── */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --container-xs:  480px;
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --container-2xl: 1440px;
+  --container-max: 1600px;
+
+  --navbar-height: 80px;
+  --sidebar-width: 280px;
+
+  /* ── Border Radius ────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Semantic Color Tokens (Dark Theme Default) ──────── */
+  --bg-primary:      var(--black);
+  --bg-secondary:    var(--black-soft);
+  --bg-card:         var(--black-card);
+  --bg-elevated:     var(--black-hover);
+  --bg-body:         var(--black);
+  --bg-inverse:      var(--ivory);
+  --bg-section-alt:  var(--ivory);
+
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+  --text-inverse:    var(--black);
+
+  --border-color:    rgba(255,255,255,0.08);
+  --border-light:    rgba(255,255,255,0.04);
+
+  --overlay-color:   rgba(17,17,17,0.95);
+  --overlay-md:      rgba(17,17,17,0.45);
+
+  --shadow-color:    rgba(0,0,0,0.15);
+  --shadow-color-lg: rgba(0,0,0,0.3);
+
+  --glass-bg:     rgba(255,255,255,0.06);
+  --glass-bg-md:  rgba(255,255,255,0.1);
+  --glass-bg-lg:  rgba(255,255,255,0.15);
+  --glass-border: rgba(255,255,255,0.12);
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm:   0 1px 3px var(--shadow-color), 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 16px var(--shadow-color), 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-lg:   0 8px 32px var(--shadow-color-lg), 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15);
+  --shadow-gold: 0 8px 32px rgba(201,162,39,0.25), 0 2px 8px rgba(201,162,39,0.15);
+  --shadow-gold-lg: 0 16px 48px rgba(201,162,39,0.3);
+  --shadow-inset: inset 0 2px 8px var(--shadow-color);
+
+  /* ── Glassmorphism ────────────────────────────────────── */
+  --glass-blur:   blur(20px);
+  --glass-blur-md: blur(40px);
+
+  /* ── Gradients ────────────────────────────────────────── */
+  --gradient-gold:    linear-gradient(135deg, #C9A227 0%, #E8C547 50%, #9A7A1E 100%);
+  --gradient-gold-h:  linear-gradient(90deg, #9A7A1E 0%, #C9A227 50%, #E8C547 100%);
+  --gradient-dark:    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  --gradient-hero:    linear-gradient(180deg, var(--overlay-color) 0%, rgba(17,17,17,0.7) 60%, rgba(17,17,17,0.9) 100%);
+  --gradient-hero-v2: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(26,26,26,0.6) 100%);
+  --gradient-ivory:   linear-gradient(180deg, var(--ivory) 0%, var(--ivory-dark) 100%);
+  --gradient-overlay: linear-gradient(0deg, var(--overlay-color) 0%, rgba(17,17,17,0) 100%);
+  --gradient-card:    linear-gradient(180deg, rgba(17,17,17,0) 0%, var(--overlay-color) 100%);
+
+  /* ── Transitions ──────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:     cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  --duration-fast:   150ms;
+  --duration-base:   250ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+  --duration-slowest: 1000ms;
+
+  --transition-base: all var(--duration-base) var(--ease-out);
+  --transition-slow: all var(--duration-slow) var(--ease-out);
+
+  /* ── Z-Index Scale ────────────────────────────────────── */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-sticky:   100;
+  --z-overlay:  200;
+  --z-modal:    300;
+  --z-toast:    400;
+  --z-tooltip:  500;
+}
