@@ -15,7 +15,7 @@ export function initNavbar() {
 
   // ── Scroll Behavior ─────────────────────────────────────
   let lastScroll = 0;
-  let isScrolled = false;
+  let isScrolled = navbar.classList.contains('scrolled');
 
   function handleScroll() {
     const scrollY = window.scrollY;
@@ -24,33 +24,37 @@ export function initNavbar() {
       navbar.classList.add('scrolled');
       navbar.classList.remove('transparent');
       isScrolled = true;
-    } else if (scrollY <= 60 && isScrolled) {
+    } else if (scrollY <= 60 && isScrolled && navbar.dataset.transparent === 'true') {
       navbar.classList.remove('scrolled');
-      if (navbar.dataset.transparent === 'true') {
-        navbar.classList.add('transparent');
-      }
+      navbar.classList.add('transparent');
       isScrolled = false;
     }
 
     lastScroll = scrollY;
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Run on init
+  if (navbar.dataset.transparent === 'true') {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
   // ── Hamburger Toggle ─────────────────────────────────────
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+    // When the classic fallback (js/hamburger.js) already wired the toggle,
+    // skip the duplicate — only wire the extras that fallback doesn't cover
+    if (!window.__fallbackMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
 
-    // Close on link click
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
+      // Close on link click
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+    }
 
     // Close on outside click
     mobileMenu.addEventListener('click', (e) => {

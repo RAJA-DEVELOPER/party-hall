@@ -147,7 +147,7 @@
 
 .pricing-card.featured {
   border-color: var(--gold);
-  background: linear-gradient(180deg, rgba(201,162,39,0.04) 0%, var(--bg-card) 100%);
+  background: var(--bg-elevated);
   transform: scale(1.04);
 }
 .pricing-card.featured:hover {

@@ -60,8 +60,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     initMaintenance();
   }
 
-  // Page enter animation
+  // Page enter animation — remove the class once it finishes so the
+  // lingering transform doesn't break position:fixed descendants (navbar, mobile menu)
   document.body.classList.add('page-enter');
+  function removePageEnter() { document.body.classList.remove('page-enter'); }
+  document.body.addEventListener('animationend', function onPageEnter(e) {
+    if (e.target === document.body && e.animationName === 'pageEnter') {
+      removePageEnter();
+      document.body.removeEventListener('animationend', onPageEnter);
+    }
+  });
+  setTimeout(removePageEnter, 1000);
 });
 
 /* ── Home Page Extras ──────────────────────────────────── */

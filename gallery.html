@@ -6,8 +6,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Grand Palais Gallery � explore stunning photos of our weddings, corporate events, private parties and exquisite venue spaces in Mumbai." />
-  <title>Gallery � Grand Palais</title>
+  <meta name="description" content="Grand Palais Gallery — explore stunning photos of our weddings, corporate events, private parties and exquisite venue spaces in Mumbai." />
+  <title>Gallery — Grand Palais</title>
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/pages/pages.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -258,26 +258,22 @@
       <a href="login.html"   class="btn btn-ghost btn-sm hide-mobile">Sign In</a>
       <button class="theme-toggle" aria-label="Switch to light mode"></button>
       <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="13" font-family="Georgia,serif" font-size="12" fill="currentColor" stroke="none">A</text><path d="M10 5.5l5 3.5-5 3.5"/><path d="M1 9h14"/></svg></button>
-      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
   </div>
 </nav>
+<button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-  <a href="index.html"    class="nav-link">Home</a>
-  <a href="home2.html"   class="nav-link">Home2</a>
-  <a href="about.html"   class="nav-link">About</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="gallery.html"  class="nav-link">Gallery</a>
-  <a href="dashboard.html" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-bottom:var(--space-2)">Dashboard</a>
-  <a href="contact.html"  class="nav-link">Contact</a>
-  <div class="theme-toggle-row">
-      <span class="theme-toggle-label">Light Mode</span>
-      <button class="theme-toggle" aria-label="Switch to light mode"></button>
-    </div>
+  <a href="index.html"    class="nav-link" data-index="01"><span class="nav-link-text">Home</span></a>
+  <a href="home2.html"   class="nav-link" data-index="02"><span class="nav-link-text">Home2</span></a>
+  <a href="about.html"   class="nav-link" data-index="03"><span class="nav-link-text">About</span></a>
+  <a href="services.html" class="nav-link" data-index="04"><span class="nav-link-text">Services</span></a>
+  <a href="gallery.html"  class="nav-link active" data-index="05"><span class="nav-link-text">Gallery</span></a>
+  <a href="contact.html"  class="nav-link" data-index="06"><span class="nav-link-text">Contact</span></a>
+  <a href="dashboard.html" class="nav-link" data-index="07"><span class="nav-link-text">Dashboard</span></a>
     <div class="mobile-menu-footer">
     <a href="contact.html" class="btn btn-primary btn-lg">Book Your Event</a>
   </div>
@@ -303,16 +299,10 @@
         <span class="hero-v2-title-row outline">Captured.</span>
       </h1>
       <p style="max-width:44ch;color:rgba(255,255,255,0.6);font-size:var(--fs-md);line-height:var(--lh-relaxed)" data-reveal="up" data-delay="200">
-        Browse our curated collection of weddings, corporate events, private parties, and venue spaces � each frame tells a story of elegance.
+        Browse our curated collection of weddings, corporate events, private parties, and venue spaces — each frame tells a story of elegance.
       </p>
       <div style="display:flex;gap:var(--space-4);margin-top:var(--space-8);flex-wrap:wrap" data-reveal="up" data-delay="400">
         <a href="contact.html" class="btn btn-primary btn-lg">Book Your Event</a>
-      </div>
-      <div class="hero-v2-meta" data-reveal="up" data-delay="600">
-        <div class="hero-v2-meta-item"><h5>2,400+</h5><p>Events Captured</p></div>
-        <div class="hero-v2-meta-item"><h5>18K+</h5><p>Photos in Archive</p></div>
-        <div class="hero-v2-meta-item"><h5>320+</h5><p>Video Productions</p></div>
-        <div class="hero-v2-meta-item"><h5>99%</h5><p>Client Satisfaction</p></div>
       </div>
     </div>
   </div>
@@ -370,13 +360,13 @@
       <button class="filter-btn" data-filter="food">Culinary <span class="filter-count">(2)</span></button>
     </nav>
     <div class="gallery-grid">
-      <div class="gallery-item" data-category="wedding" data-reveal="scale" data-caption="Royal Wedding � December 2024">
+      <div class="gallery-item" data-category="wedding" data-reveal="scale" data-caption="Royal Wedding — December 2024">
         <img src="https://images.unsplash.com/photo-1774020040126-83543f6de513?auto=format&fit=crop&w=800&q=80" alt="Grand wedding ceremony setup" loading="lazy" />
         <div class="gallery-item-overlay"><div class="gallery-item-overlay-inner"><span>Royal Wedding</span><small>December 2024</small></div></div>
       </div>
-      <div class="gallery-item" data-category="wedding" data-reveal="scale" data-caption="Wedding Reception D�cor">
+      <div class="gallery-item" data-category="wedding" data-reveal="scale" data-caption="Wedding Reception Décor">
         <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Elegant wedding reception" loading="lazy" />
-        <div class="gallery-item-overlay"><div class="gallery-item-overlay-inner"><span>Wedding Reception</span><small>D�cor & Lighting</small></div></div>
+        <div class="gallery-item-overlay"><div class="gallery-item-overlay-inner"><span>Wedding Reception</span><small>Décor & Lighting</small></div></div>
       </div>
       <div class="gallery-item" data-category="wedding" data-reveal="scale" data-caption="Traditional Mandap Setup">
         <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Wedding mandap decoration" loading="lazy" />
@@ -416,7 +406,7 @@
       </div>
       <div class="gallery-item" data-category="party" data-reveal="scale" data-caption="Anniversary Gala Evening">
         <img src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?auto=format&fit=crop&w=800&q=80" alt="Champagne celebration" loading="lazy" />
-        <div class="gallery-item-overlay"><div class="gallery-item-overlay-inner"><span>Anniversary Gala</span><small>Evening Soir�e</small></div></div>
+        <div class="gallery-item-overlay"><div class="gallery-item-overlay-inner"><span>Anniversary Gala</span><small>Evening Soirée</small></div></div>
       </div>
       <div class="gallery-item" data-category="food" data-reveal="scale" data-caption="Gourmet Fine Dining Experience">
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Fine dining setup" loading="lazy" />
@@ -447,7 +437,7 @@
         <div class="venue-card-content">
           <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Flagship Hall</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Royal Ballroom</h3>
-          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">12,000 sq ft � Up to 2,000 guests</p>
+          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">12,000 sq ft — Up to 2,000 guests</p>
         </div>
       </div>
       <div class="venue-card">
@@ -456,7 +446,7 @@
         <div class="venue-card-content">
           <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Wedding Suite</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Garden Pavilion</h3>
-          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">5,500 sq ft � Up to 500 guests</p>
+          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">5,500 sq ft — Up to 500 guests</p>
         </div>
       </div>
       <div class="venue-card">
@@ -465,7 +455,7 @@
         <div class="venue-card-content">
           <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Corporate</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Executive Suite</h3>
-          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">3,200 sq ft � Up to 300 guests</p>
+          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">3,200 sq ft — Up to 300 guests</p>
         </div>
       </div>
     </div>
@@ -488,7 +478,7 @@
         </div>
         <div class="video-card-label">
           <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Wedding Film</span>
-          <h4 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--white);margin-top:var(--space-1)">Priya & Rohan � December 2024</h4>
+          <h4 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--white);margin-top:var(--space-1)">Priya & Rohan — December 2024</h4>
         </div>
       </div>
       <div class="video-card" data-reveal="up" data-delay="200" data-video="https://youtube.com">
@@ -534,7 +524,7 @@
             <span class="navbar-logo-tagline">Luxury Venue</span>
           </div>
         </a>
-        <p class="footer-brand-desc">Mumbai's most prestigious luxury banquet hall � where exceptional service meets timeless elegance.</p>
+        <p class="footer-brand-desc">Mumbai's most prestigious luxury banquet hall — where exceptional service meets timeless elegance.</p>
         <div class="footer-social">
           <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -560,7 +550,7 @@
           <li><a href="services.html" class="footer-link">Corporate Events</a></li>
           <li><a href="services.html" class="footer-link">Private Parties</a></li>
           <li><a href="services.html" class="footer-link">Catering & Cuisine</a></li>
-          <li><a href="services.html" class="footer-link">D�cor & Florals</a></li>
+          <li><a href="services.html" class="footer-link">Décor & Florals</a></li>
         </ul>
       </div>
       <div>
@@ -585,5 +575,6 @@
 
 <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 <script type="module" src="js/main.js"></script>
+<script src="js/hamburger.js"></script>
 </body>
 </html>

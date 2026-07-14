@@ -45,11 +45,42 @@
 [data-theme="dark"] .contact-section,
 [data-theme="dark"] .map-section,
 [data-theme="dark"] .card-service,
+[data-theme="dark"] .legal-content,
+[data-theme="dark"] .sitemap-content,
+[data-theme="dark"] .emergency-section,
 [data-theme="dark"] [style*="background:var(--bg-section-alt)"] {
   --text-primary:    var(--black);
   --text-secondary:  rgba(17,17,17,0.75);
   --text-tertiary:   rgba(17,17,17,0.55);
   --text-muted:      rgba(17,17,17,0.35);
+}
+
+/* ── Card elements with dark backgrounds need light text ── */
+[data-theme="dark"] .highlight-card,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .award-card,
+[data-theme="dark"] .hours-item,
+[data-theme="dark"] .emergency-card,
+[data-theme="dark"] .contact-info-card,
+[data-theme="dark"] .contact-form-card,
+[data-theme="dark"] .social-card,
+[data-theme="dark"] [style*="background:var(--bg-card)"],
+[data-theme="dark"] [style*="background:var(--bg-primary)"] {
+  --text-primary:    var(--white);
+  --text-secondary:  rgba(255,255,255,0.75);
+  --text-tertiary:   rgba(255,255,255,0.55);
+  --text-muted:      rgba(255,255,255,0.35);
+}
+
+/* ── Form inputs on light-bg sections need explicit light bg in dark mode ── */
+[data-theme="dark"] .contact-section .form-light .form-input,
+[data-theme="dark"] .contact-section .form-light .form-select,
+[data-theme="dark"] .contact-section .form-light .form-textarea {
+  background: var(--white);
+  color: var(--black);
+}
+[data-theme="dark"] .contact-section .form-light .form-input::placeholder {
+  color: rgba(17,17,17,0.35);
 }
 
 /* ── .section-bg-dark always stays dark in light mode ──── */
@@ -123,7 +154,11 @@ html *::after {
   --glass-bg:       rgba(255,255,255,0.06);
 }
 
-/* ── Breadcrumbs always stay dark (in hero overlay) ─────── */
+[data-theme="light"] .navbar.scrolled .nav-link {
+  color: rgba(17,17,17,0.95);
+}
+
+/* ── Breadcrumbs always stay light (on dark hero) ────────── */
 [data-theme="light"] .breadcrumbs {
-  color: var(--text-tertiary);
+  color: rgba(255,255,255,0.55);
 }
