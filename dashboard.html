@@ -349,7 +349,7 @@
             <label class="form-label" for="b-notes">Special Requests / Notes</label>
             <textarea id="b-notes" class="form-input" rows="4" placeholder="Any specific requirements, dietary needs, or special requests..."></textarea>
           </div>
-          <div style="display:flex;gap:var(--space-4);justify-content:flex-end">
+          <div class="dashboard-form-actions" style="display:flex;gap:var(--space-4);justify-content:flex-end">
             <button type="reset" class="btn btn-ghost btn-lg">Clear Form</button>
             <button type="submit" class="btn btn-primary btn-lg">Submit Booking Request</button>
           </div>
@@ -367,7 +367,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-5)">
         <!-- Confirmed -->
-        <div style="background:var(--bg-card);border:1px solid rgba(76,175,80,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+        <div class="status-card" style="background:var(--bg-card);border:1px solid rgba(76,175,80,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
           <img src="https://images.unsplash.com/photo-1603298573248-3e98441a0d6d?auto=format&fit=crop&w=100&q=80" alt="Wedding" style="width:70px;height:70px;border-radius:var(--radius-lg);object-fit:cover;flex-shrink:0;" loading="lazy" />
           <div style="flex:1">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
@@ -384,7 +384,7 @@
           <button onclick="document.querySelector('[data-panel=invoice]').click()" class="btn btn-ghost btn-sm" style="flex-shrink:0">View Invoice</button>
         </div>
         <!-- Pending -->
-        <div style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+        <div class="status-card" style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
           <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=100&q=80" alt="Corporate event" style="width:70px;height:70px;border-radius:var(--radius-lg);object-fit:cover;flex-shrink:0;" loading="lazy" />
           <div style="flex:1">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">
@@ -401,7 +401,7 @@
           </div>
         </div>
         <!-- Pending 2 -->
-        <div style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
+        <div class="status-card" style="background:var(--bg-card);border:1px solid rgba(255,152,0,0.3);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:var(--space-6);align-items:flex-start">
           <div style="width:70px;height:70px;border-radius:var(--radius-lg);background:var(--gold-glass);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0"><i class="fa-solid fa-cake-candles"></i></div>
           <div style="flex:1">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2)">

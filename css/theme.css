@@ -158,6 +158,22 @@ html *::after {
   color: rgba(17,17,17,0.95);
 }
 
+[data-theme="light"] .mobile-menu .nav-link {
+  color: rgba(255,255,255,0.65);
+}
+
+[data-theme="light"] .navbar:not(.transparent) ~ .hamburger .hamburger-line {
+  background: var(--black);
+}
+
+[data-theme="light"] .navbar.transparent ~ .hamburger .hamburger-line {
+  background: var(--white);
+}
+
+[data-theme="light"][data-theme="light"] .hamburger.open .hamburger-line {
+  background: var(--white);
+}
+
 /* ── Breadcrumbs always stay light (on dark hero) ────────── */
 [data-theme="light"] .breadcrumbs {
   color: rgba(255,255,255,0.55);

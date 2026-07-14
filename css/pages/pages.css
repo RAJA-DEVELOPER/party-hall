@@ -482,11 +482,15 @@
   .timeline-dot { left: -5px; width: 36px; height: 36px; font-size: var(--fs-xs); }
   .contact-form-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+  .map-container { height: 320px; }
+}
 @media (max-width: 640px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .awards-grid { grid-template-columns: 1fr; }
   .gallery-masonry { grid-template-columns: 1fr; }
   .hours-grid { grid-template-columns: 1fr; }
+  .map-container { height: 260px; }
 }
 
 /* ── Responsive Grid Utilities ─────────────────────────── */
@@ -574,7 +578,7 @@
   z-index: 2;
   max-width: var(--container-xl);
   margin: 0 auto;
-  padding: var(--navbar-height) var(--space-8) 0;
+  padding: 68px var(--space-8) 0;
 }
 .hero-v2-label {
   display: inline-flex;
@@ -650,6 +654,10 @@
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
 }
+.navbar.transparent ~ .hero-v2 .hero-v2-content {
+  padding-top: var(--navbar-height);
+}
+
 @media (max-width: 768px) {
   .hero-v2-content { padding-inline: var(--space-5); }
   .hero-v2-meta { gap: var(--space-6); flex-wrap: wrap; }

@@ -798,6 +798,11 @@
   .dashboard-welcome,
   .dashboard-nav-divider { display: none; }
   .dashboard-nav-actions .btn { padding-inline: var(--space-3); }
+
+  .dashboard-page-header { flex-direction: column; align-items: stretch; }
+  .dashboard-page-header .btn { align-self: flex-start; }
+  .booking-form-card { padding: var(--space-6) var(--space-5); }
+  .booking-form-grid { gap: var(--space-6); }
 }
 
 .dashboard-nav-actions {
@@ -856,4 +861,33 @@
 @media (max-width: 480px) {
   .dashboard-payment-schedule { grid-template-columns: 1fr; }
   .dashboard-nav-actions .btn-ghost { display: none; }
+  .dashboard-main { padding: var(--space-4) var(--space-4); }
+
+  .overview-stats { grid-template-columns: 1fr; gap: var(--space-4); }
+  .overview-stat-card { padding: var(--space-5); }
+
+  .invoice-header { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  .invoice-number { text-align: left; }
+
+  .bookings-table td,
+  .bookings-table th { padding: var(--space-3) var(--space-3); font-size: var(--fs-xs); }
+
+  .payment-item { flex-wrap: wrap; gap: var(--space-3); }
+  .payment-amount { width: 100%; text-align: right; }
+
+  .profile-header-card { flex-direction: column; text-align: center; padding: var(--space-6); }
+  .profile-avatar-lg { width: 72px; height: 72px; font-size: var(--fs-2xl); }
+
+  .sidebar-toggle { right: var(--space-4); bottom: calc(var(--space-8) + 60px); }
+
+  .dashboard-form-actions { flex-direction: column; }
+  .dashboard-form-actions .btn { width: 100%; }
+
+  .bookings-table-wrapper { margin: 0 calc(-1 * var(--space-4)); width: calc(100% + 2 * var(--space-4)); border-radius: 0; }
+
+  .status-card { flex-direction: column; align-items: stretch !important; }
+  .status-card > img { width: 48px !important; height: 48px !important; }
+  .status-card > div[style*="70px"] { width: 48px !important; height: 48px !important; font-size: 1.25rem !important; display: flex !important; }
+
+  .settings-section-card .btn-ghost { width: 100%; justify-content: center; }
 }
