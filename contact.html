@@ -5,9 +5,12 @@
     (function(){var t=localStorage.getItem('grand-palais-theme');if(t){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Contact Grand Palais — get in touch to book our luxury banquet halls for weddings, corporate events, and private celebrations in Mumbai." />
   <title>Contact Us — Grand Palais | Luxury Banquet & Party Hall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/pages/pages.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -78,6 +81,11 @@
     @media (max-width: 640px) {
       .social-cards { grid-template-columns: 1fr; }
     }
+    @media (max-width: 480px) {
+      .social-cards { gap: var(--space-3); }
+      .social-card { padding: var(--space-6) var(--space-4); }
+      .social-card-icon { font-size: var(--fs-2xl); }
+    }
   </style>
 </head>
 <body>
@@ -103,8 +111,8 @@
     <div class="navbar-actions">
       <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
       <a href="login.html"   class="btn btn-ghost btn-sm hide-mobile">Sign In</a>
-      <button class="theme-toggle" aria-label="Switch to light mode"></button>
       <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="1" y="13" font-family="Georgia,serif" font-size="12" fill="currentColor" stroke="none">A</text><path d="M10 5.5l5 3.5-5 3.5"/><path d="M1 9h14"/></svg></button>
+      <button class="theme-toggle" aria-label="Switch to light mode"></button>
     </div>
   </div>
 </nav>
@@ -121,13 +129,14 @@
   <a href="gallery.html"  class="nav-link" data-index="05"><span class="nav-link-text">Gallery</span></a>
   <a href="contact.html"  class="nav-link active" data-index="06"><span class="nav-link-text">Contact</span></a>
   <a href="dashboard.html" class="nav-link" data-index="07"><span class="nav-link-text">Dashboard</span></a>
+  <a href="login.html"    class="nav-link" data-index="08"><span class="nav-link-text">Sign In</span></a>
     <div class="mobile-menu-footer"></div>
 </div>
 
 <!-- HERO -->
 <section class="hero-v2" aria-label="Contact hero">
   <div class="hero-v2-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1687213280116-234f93b15b44?auto=format&fit=crop&w=1920&q=85" alt="Grand Palais ballroom" />
+    <img src="https://images.unsplash.com/photo-1687213280116-234f93b15b44?auto=format&fit=crop&w=1920&q=85" alt="Grand Palais ballroom" loading="eager" fetchpriority="high" />
   </div>
   <div class="hero-v2-overlay" aria-hidden="true"></div>
   <div class="hero-v2-particles" aria-hidden="true"></div>
@@ -138,10 +147,10 @@
         <span class="hero-v2-title-row italic">Magic Together</span>
         <span class="hero-v2-title-row outline">Reach Out.</span>
       </h1>
-      <p style="max-width:44ch;color:rgba(255,255,255,0.6);font-size:var(--fs-md);line-height:var(--lh-relaxed)" data-reveal="up" data-delay="200">
+      <p class="hero-v2-desc" data-reveal="up" data-delay="200">
         We'd love to hear about your vision. Whether it's a wedding, corporate gala, or private celebration — let's begin the conversation.
       </p>
-      <div style="display:flex;gap:var(--space-4);margin-top:var(--space-8);flex-wrap:wrap" data-reveal="up" data-delay="400">
+      <div class="hero-v2-actions" data-reveal="up" data-delay="400">
         <a href="tel:+912212345678" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Us</a>
         <a href="mailto:info@grandpalais.in" class="btn btn-ghost btn-lg">Email Us</a>
       </div>

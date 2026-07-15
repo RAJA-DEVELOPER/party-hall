@@ -6,6 +6,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   min-height: 600px;
   overflow: hidden;
   display: flex;
@@ -267,6 +268,7 @@
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .hero { min-height: 100svh; }
   .hero-content { padding: 0 var(--space-5); padding-top: var(--navbar-height); }
   .hero-title   { max-width: 20ch; }
   .hero-actions { gap: var(--space-3); }
@@ -276,6 +278,27 @@
 }
 
 @media (max-width: 480px) {
-  .hero { min-height: 100svh; }
+  .hero { min-height: 100dvh; }
+  .hero-content { padding: 0 var(--space-4); padding-top: 56px; }
+  .hero-title {
+    font-size: clamp(var(--fs-2xl), 10vw, var(--fs-4xl));
+    max-width: 16ch;
+  }
+  .hero-subtitle {
+    font-size: var(--fs-sm);
+    max-width: 100%;
+  }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
   .hero-arrows { display: none; }
+  .hero-dot { width: 5px; height: 5px; }
+  .hero-dot.active { width: 18px; }
+  .hero-controls { right: var(--space-4); bottom: var(--space-5); }
+  .hero-slide-info { left: var(--space-4); bottom: var(--space-5); }
+}
+
+@media (max-width: 380px) {
+  .hero-content { padding-top: 48px; }
+  .hero-title { font-size: var(--fs-2xl); }
+  .hero-subtitle { font-size: var(--fs-xs); }
 }
