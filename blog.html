@@ -23,7 +23,7 @@
     }
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: var(--space-8);
     }
     .blog-card {
@@ -123,8 +123,14 @@
     .blog-pagination {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: var(--space-3);
       margin-top: var(--space-12);
+    }
+    .blog-pagination-pages,
+    .blog-pagination-next {
+      display: flex;
+      gap: var(--space-3);
     }
     .blog-pagination a {
       width: 42px;
@@ -311,13 +317,12 @@
       margin-bottom: var(--space-6);
     }
     @media (max-width: 1024px) {
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
       .blog-featured { grid-template-columns: 1fr; }
       .blog-featured-img { aspect-ratio: 16/9; max-height: 320px; }
       .blog-instagram-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
-      .blog-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+      .blog-grid { max-width: 450px; margin: 0 auto; }
 
       .blog-featured-body { padding: var(--space-6); }
       .blog-instagram-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
@@ -549,10 +554,14 @@
 
     <!-- Pagination -->
     <nav class="blog-pagination" aria-label="Blog pagination">
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+      <div class="blog-pagination-pages">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+      </div>
+      <div class="blog-pagination-next">
+        <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
     </nav>
 
   </div>
