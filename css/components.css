@@ -1319,6 +1319,17 @@
 [dir="rtl"] .btn-rtl svg {
   transform: scaleX(-1);
 }
+[dir="rtl"] .navbar-actions { margin-right: 0; margin-left: var(--space-12); }
+[dir="rtl"] .hamburger {
+  right: auto;
+  left: var(--space-8);
+}
+@media (max-width: 768px) {
+  [dir="rtl"] .hamburger { left: var(--space-5); }
+}
+@media (max-width: 360px) {
+  [dir="rtl"] .hamburger { left: var(--space-4); }
+}
 
 [dir="rtl"] .mobile-menu {
   --slide-x: -100%;
