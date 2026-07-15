@@ -76,7 +76,10 @@
 }
 
 /* ── Section 3: Venue Highlights ──────────────────────── */
-.highlights-section { background: var(--bg-section-alt); }
+.highlights-section {
+  background: var(--bg-section-alt);
+  color: var(--text-primary);
+}
 
 .highlights-grid {
   display: grid;
@@ -122,7 +125,10 @@
 @media (max-width: 600px) { .highlights-grid { grid-template-columns: 1fr; } }
 
 /* ── Section 4: Pricing ────────────────────────────────── */
-.pricing-section { background: var(--bg-section-alt); }
+.pricing-section {
+  background: var(--bg-section-alt);
+  color: var(--text-primary);
+}
 
 .pricing-grid {
   display: grid;
@@ -302,7 +308,10 @@
 }
 
 /* ── Section 6: Partners ───────────────────────────────── */
-.partners-section { background: var(--bg-section-alt); }
+.partners-section {
+  background: var(--bg-section-alt);
+  color: var(--text-primary);
+}
 
 .partners-strip {
   display: flex;

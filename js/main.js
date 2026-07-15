@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     initAuth();
   }
 
+  if (page === 'admin.html') {
+    const { initAdmin } = await import('./pages/admin.js');
+    initAdmin();
+  }
+
   if (page === 'maintenance.html') {
     initMaintenance();
   }

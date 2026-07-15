@@ -51,11 +51,20 @@
       <a href="about.html"    class="nav-link active">About</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="gallery.html"  class="nav-link">Gallery</a>
+      <a href="blog.html"     class="nav-link">Blog</a>
       <a href="contact.html"  class="nav-link">Contact</a>
       </nav>
     <div class="navbar-actions">
-      <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
-      <a href="login.html"   class="btn btn-ghost btn-sm hide-mobile">Sign In</a>
+      <div class="navbar-profile">
+        <button class="navbar-profile-btn" aria-label="Profile menu" aria-expanded="false" title="Profile">
+          <i class="fa-solid fa-user-circle"></i>
+        </button>
+        <div class="navbar-profile-dropdown">
+          <a href="login.html" class="navbar-profile-link"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a>
+          <a href="dashboard.html" class="navbar-profile-link"><i class="fa-solid fa-chart-pie"></i> User Dashboard</a>
+          <a href="admin.html" class="navbar-profile-link"><i class="fa-solid fa-gear"></i> Admin Dashboard</a>
+        </div>
+      </div>
       <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><span class="btn-rtl-text">RTL</span></button>
       <button class="theme-toggle" aria-label="Switch to light mode"></button>
     </div>
@@ -72,14 +81,15 @@
   <a href="about.html"    class="nav-link active" data-index="03"><span class="nav-link-text">About</span></a>
   <a href="services.html" class="nav-link" data-index="04"><span class="nav-link-text">Services</span></a>
   <a href="gallery.html"  class="nav-link" data-index="05"><span class="nav-link-text">Gallery</span></a>
-  <a href="contact.html"  class="nav-link" data-index="06"><span class="nav-link-text">Contact</span></a>
-  <a href="dashboard.html" class="nav-link" data-index="07"><span class="nav-link-text">Dashboard</span></a>
-  <a href="login.html"    class="nav-link" data-index="08"><span class="nav-link-text">Sign In</span></a>
+  <a href="blog.html"     class="nav-link" data-index="06"><span class="nav-link-text">Blog</span></a>
+  <a href="contact.html"  class="nav-link" data-index="07"><span class="nav-link-text">Contact</span></a>
+  <a href="dashboard.html" class="nav-link" data-index="08"><span class="nav-link-text">Dashboard</span></a>
+  <a href="login.html"    class="nav-link" data-index="09"><span class="nav-link-text">Sign In</span></a>
     <div class="mobile-menu-footer"></div>
 </div>
 
 <!-- HERO -->
-<section class="hero-v2" aria-label="About hero">
+<section class="hero-v2" aria-label="About hero" style="margin-top:var(--space-24)">
   <div class="hero-v2-bg" aria-hidden="true">
     <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1920&q=85" loading="eager" fetchpriority="high" alt="Grand Palais ballroom" />
   </div>
@@ -390,6 +400,7 @@
           <li><a href="about.html" class="footer-link">About Us</a></li>
           <li><a href="services.html" class="footer-link">Services</a></li>
           <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
           <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function(){var t=localStorage.getItem('grand-palais-theme');if(t){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Grand Palais Blog — wedding planning tips, event inspiration, luxury venue guides, and stories from Mumbai's premier banquet hall." />
+  <title>Blog — Grand Palais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="https://images.unsplash.com/photo-1768851142332-75f3d1b47452?auto=format&fit=crop&w=32&h=32&q=80" />
+  <style>
+
+    .blog-section {
+      padding: var(--space-16) 0;
+      background: var(--bg-section-alt);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .blog-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-card-body {
+      padding: var(--space-6);
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: var(--fs-xs);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-3);
+    }
+    .blog-card-category {
+      font-size: 10px;
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-glass);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+    }
+    .blog-card-title {
+      font-family: var(--font-serif);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-light);
+      color: var(--text-primary);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-3);
+    }
+    .blog-card-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--duration-base) var(--ease-out);
+    }
+    .blog-card-title a:hover {
+      color: var(--gold);
+    }
+    .blog-card-excerpt {
+      font-size: var(--fs-sm);
+      color: var(--text-tertiary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-5);
+    }
+    .blog-card-link {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: gap var(--duration-base) var(--ease-out);
+    }
+    .blog-card-link:hover {
+      gap: var(--space-3);
+    }
+    .blog-featured {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: var(--space-12);
+    }
+    .blog-featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+    }
+    .blog-featured-body {
+      padding: var(--space-10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .blog-pagination {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-top: var(--space-12);
+    }
+    .blog-pagination a {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-sm);
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+    .blog-pagination a:hover,
+    .blog-pagination a.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-glass);
+    }
+    .blog-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+    .blog-sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+    }
+    .blog-sidebar-title {
+      font-family: var(--font-serif);
+      font-size: var(--fs-lg);
+      color: var(--text-primary);
+      font-weight: var(--fw-light);
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .blog-tag {
+      display: inline-block;
+      font-size: var(--fs-xs);
+      color: var(--text-tertiary);
+      background: var(--glass-bg);
+      padding: var(--space-1) var(--space-4);
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: var(--transition-base);
+      margin: 0 var(--space-2) var(--space-2) 0;
+    }
+    .blog-tag:hover {
+      background: var(--gold-glass);
+      color: var(--gold);
+    }
+    .blog-recent-item {
+      display: flex;
+      gap: var(--space-4);
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--border-color);
+      text-decoration: none;
+    }
+    .blog-recent-item:last-child { border-bottom: none; }
+    .blog-recent-img {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .blog-recent-title {
+      font-size: var(--fs-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-tight);
+      transition: color var(--duration-base) var(--ease-out);
+    }
+    .blog-recent-item:hover .blog-recent-title {
+      color: var(--gold);
+    }
+    .blog-recent-date {
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      margin-top: var(--space-1);
+    }
+    .blog-instagram {
+      padding: var(--space-16) 0;
+      background: var(--bg-section-alt);
+      text-align: center;
+    }
+    .blog-instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+    }
+    .blog-instagram-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
+    .blog-instagram-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-out), filter var(--duration-base) var(--ease-out);
+    }
+    .blog-instagram-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.6);
+    }
+    .blog-instagram-item-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--duration-base) var(--ease-out);
+    }
+    .blog-instagram-item:hover .blog-instagram-item-overlay {
+      opacity: 1;
+    }
+    .blog-instagram-item-overlay i {
+      font-size: var(--fs-2xl);
+      color: var(--white);
+    }
+    .blog-instagram-stats {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-12);
+      margin-top: var(--space-8);
+    }
+    .blog-instagram-stat h4 {
+      font-family: var(--font-serif);
+      font-size: var(--fs-3xl);
+      font-weight: var(--fw-light);
+      color: var(--gold);
+    }
+    .blog-instagram-stat p {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-top: var(--space-1);
+    }
+    .blog-spotlight {
+      position: relative;
+      height: 460px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .blog-spotlight img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .blog-spotlight-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 70%, transparent 100%);
+    }
+    .blog-spotlight-content {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      color: var(--white);
+    }
+    .blog-spotlight-content h2 {
+      font-family: var(--font-serif);
+      font-size: var(--fs-4xl);
+      font-weight: var(--fw-light);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-4);
+    }
+    .blog-spotlight-content p {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--fs-md);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-6);
+    }
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured-img { aspect-ratio: 16/9; max-height: 320px; }
+      .blog-instagram-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+
+      .blog-featured-body { padding: var(--space-6); }
+      .blog-instagram-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+      .blog-instagram-stats { gap: var(--space-6); flex-wrap: wrap; }
+      .blog-instagram-stat h4 { font-size: var(--fs-xl); }
+      .blog-spotlight { height: 360px; }
+      .blog-spotlight-content h2 { font-size: var(--fs-2xl); }
+      .blog-spotlight-overlay { background: rgba(0,0,0,0.6); }
+    }
+
+    .blog-subscribe-form {
+      display: flex;
+      gap: var(--space-3);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .blog-subscribe-input {
+      flex: 1;
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      font-size: var(--fs-sm);
+      outline: none;
+      font-family: var(--font-sans);
+      min-width: 0;
+    }
+    .blog-subscribe-input::placeholder {
+      color: rgba(255,255,255,0.55);
+      opacity: 1;
+    }
+    @media (max-width: 480px) {
+      .blog-subscribe-form {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .blog-subscribe-input {
+        width: 100%;
+      }
+      .blog-subscribe-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" data-transparent="true" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" aria-label="Grand Palais Home">
+      <div class="navbar-logo-icon">GP</div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">Grand Palais</span>
+        <span class="navbar-logo-tagline">Luxury Venue</span>
+      </div>
+    </a>
+    <nav class="navbar-nav" aria-label="Primary navigation">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="home2.html"    class="nav-link">Home2</a>
+      <a href="about.html"    class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html"  class="nav-link">Gallery</a>
+      <a href="blog.html"     class="nav-link active">Blog</a>
+      <a href="contact.html"  class="nav-link">Contact</a>
+      </nav>
+    <div class="navbar-actions">
+      <div class="navbar-profile">
+        <button class="navbar-profile-btn" aria-label="Profile menu" aria-expanded="false" title="Profile">
+          <i class="fa-solid fa-user-circle"></i>
+        </button>
+        <div class="navbar-profile-dropdown">
+          <a href="login.html" class="navbar-profile-link"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a>
+          <a href="dashboard.html" class="navbar-profile-link"><i class="fa-solid fa-chart-pie"></i> User Dashboard</a>
+          <a href="admin.html" class="navbar-profile-link"><i class="fa-solid fa-gear"></i> Admin Dashboard</a>
+        </div>
+      </div>
+      <button class="btn-rtl" aria-label="Switch to RTL" title="RTL"><span class="btn-rtl-text">RTL</span></button>
+      <button class="theme-toggle" aria-label="Switch to light mode"></button>
+    </div>
+  </div>
+</nav>
+<button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html"    class="nav-link" data-index="01"><span class="nav-link-text">Home</span></a>
+  <a href="home2.html"    class="nav-link" data-index="02"><span class="nav-link-text">Home2</span></a>
+  <a href="about.html"    class="nav-link" data-index="03"><span class="nav-link-text">About</span></a>
+  <a href="services.html" class="nav-link" data-index="04"><span class="nav-link-text">Services</span></a>
+  <a href="gallery.html"  class="nav-link" data-index="05"><span class="nav-link-text">Gallery</span></a>
+  <a href="blog.html"     class="nav-link active" data-index="06"><span class="nav-link-text">Blog</span></a>
+  <a href="contact.html"  class="nav-link" data-index="07"><span class="nav-link-text">Contact</span></a>
+  <a href="dashboard.html" class="nav-link" data-index="08"><span class="nav-link-text">Dashboard</span></a>
+  <a href="login.html"    class="nav-link" data-index="09"><span class="nav-link-text">Sign In</span></a>
+    <div class="mobile-menu-footer"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero-v2" aria-label="Blog hero">
+  <div class="hero-v2-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=85" alt="" />
+  </div>
+  <div class="hero-v2-overlay" aria-hidden="true"></div>
+  <div class="hero-v2-particles" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-v2-content">
+      <div class="hero-v2-label" data-reveal="fade">
+        <span class="hero-v2-label-line"></span>
+        Grand Palais Journal
+        <span class="hero-v2-label-line"></span>
+      </div>
+      <h1 class="hero-v2-title" data-reveal="up">
+        <span class="hero-v2-title-row">Stories, Guides</span>
+        <span class="hero-v2-title-row italic">&amp;</span>
+        <span class="hero-v2-title-row outline">Inspiration</span>
+      </h1>
+      <p class="hero-v2-desc" data-reveal="up" data-delay="200">Insights from Mumbai's premier luxury venue — wedding planning, event design, and the art of celebration.</p>
+    </div>
+  </div>
+  <div class="hero-v2-sidebar" aria-hidden="true">
+    <a href="https://instagram.com" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+    <div class="hero-v2-sidebar-text">Follow Our Story</div>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Featured Post -->
+    <article class="blog-featured" data-reveal="up">
+      <img class="blog-featured-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85" alt="Elegant wedding reception setup" loading="lazy" />
+      <div class="blog-featured-body">
+        <span class="blog-card-category" style="margin-bottom:var(--space-4);display:inline-block">Wedding Planning</span>
+        <h2 style="font-family:var(--font-serif);font-size:var(--fs-2xl);font-weight:var(--fw-light);color:var(--text-primary);line-height:var(--lh-tight);margin-bottom:var(--space-4)">
+          <a href="#" style="color:inherit;text-decoration:none">The Complete Guide to Planning Your Dream Wedding at Grand Palais</a>
+        </h2>
+        <div style="font-size:var(--fs-xs);color:var(--text-tertiary);margin-bottom:var(--space-4)">December 5, 2025 &middot; 8 min read</div>
+        <p style="font-size:var(--fs-base);color:var(--text-tertiary);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)">
+          From selecting the perfect ballroom to curating a menu that delights every guest — discover everything you need to know about hosting your celebration at Mumbai's most prestigious venue.
+        </p>
+        <a href="#" class="blog-card-link">Read the Guide <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Birthday party decorations" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Party Planning</span>
+            <span>Nov 28, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">7 Ideas for an Unforgettable Milestone Birthday Celebration</a></h3>
+          <p class="blog-card-excerpt">Whether it's a 30th, 50th, or 70th — make every milestone extraordinary with these curated ideas from our events team.</p>
+          <a href="#" class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80" alt="Catering spread" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Catering</span>
+            <span>Nov 15, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">A Culinary Tour: Crafting the Perfect Wedding Menu</a></h3>
+          <p class="blog-card-excerpt">Our head chef shares the philosophy behind Grand Palais's multi-cuisine menus — from traditional Indian feasts to contemporary global flavours.</p>
+          <a href="#" class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=600&q=80" alt="Corporate event" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Corporate</span>
+            <span>Nov 2, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">How to Host a Corporate Gala That Leaves a Lasting Impression</a></h3>
+          <p class="blog-card-excerpt">From branding opportunities to seamless AV production — elevate your next corporate gathering with these pro insights.</p>
+          <a href="#" class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80" alt="Grand ballroom" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Venue</span>
+            <span>Oct 20, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">The Royal Ballroom: A Look Inside Grand Palais's Crown Jewel</a></h3>
+          <p class="blog-card-excerpt">Step inside Mumbai's most opulent event space — 12,000 square feet of pure elegance, crystal chandeliers, and timeless design.</p>
+          <a href="#" class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Wedding couple dancing" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Real Weddings</span>
+            <span>Oct 8, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">Real Wedding: Priya & Rohan — A Grand Palais Love Story</a></h3>
+          <p class="blog-card-excerpt">Relive the magic of Priya and Rohan's December wedding — a celebration of love, family, and exquisite design at the Royal Ballroom.</p>
+          <a href="#" class="blog-card-link">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="up">
+        <img class="blog-card-img" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=600&q=80" alt="Event decoration" loading="lazy" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Design</span>
+            <span>Sep 25, 2025</span>
+          </div>
+          <h3 class="blog-card-title"><a href="#">2025 Wedding Décor Trends: What's In for the Modern Couple</a></h3>
+          <p class="blog-card-excerpt">From sustainable florals to immersive lighting — discover the trends shaping luxury weddings this year.</p>
+          <a href="#" class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav class="blog-pagination" aria-label="Blog pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+    </nav>
+
+  </div>
+</section>
+
+<!-- INSTAGRAM FEED -->
+<section class="blog-instagram">
+  <div class="container">
+    <div data-reveal="up">
+      <span class="eyebrow">@grandpalais</span>
+      <h2 class="section-title" style="margin-top:var(--space-4)">Follow Us on Instagram</h2>
+    </div>
+    <div class="blog-instagram-grid">
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Wedding decoration" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80" alt="Wedding couple" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=400&q=80" alt="Catering spread" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&q=80" alt="Grand ballroom" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=400&q=80" alt="Corporate event" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=400&q=80" alt="Birthday celebration" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=400&q=80" alt="Event decoration" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="#" class="blog-instagram-item" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Behind the scenes" loading="lazy" />
+        <div class="blog-instagram-item-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+    </div>
+    <div class="blog-instagram-stats" data-reveal="up">
+      <div class="blog-instagram-stat"><h4>24.5K</h4><p>Followers</p></div>
+      <div class="blog-instagram-stat"><h4>1.2K</h4><p>Posts</p></div>
+      <div class="blog-instagram-stat"><h4>8.7K</h4><p>Engagements</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT SPOTLIGHT -->
+<section class="blog-spotlight" data-reveal="up">
+  <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=85" alt="Grand Palais event" loading="lazy" />
+  <div class="blog-spotlight-overlay"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="blog-spotlight-content">
+      <span class="eyebrow eyebrow--light">Event Spotlight</span>
+      <h2>Royal Wedding of Priya &amp; Rohan</h2>
+      <p>A breathtaking celebration at the Royal Ballroom — 450 guests, 12-course dinner, and an evening of timeless elegance.</p>
+      <a href="#" class="btn btn-primary">View Full Gallery <i class="fa-solid fa-arrow-right" style="margin-left:var(--space-2)"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER CTA -->
+<section style="padding:var(--space-16) 0;background:var(--black);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,162,39,0.1) 0%,transparent 70%)"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div style="text-align:center;max-width:500px;margin:0 auto" data-reveal="up">
+      <span class="eyebrow eyebrow--light">Stay Inspired</span>
+      <h2 class="section-title" style="color:var(--white);margin-top:var(--space-4)">Never Miss a Story</h2>
+      <p style="color:rgba(255,255,255,0.55);font-size:var(--fs-sm);margin:var(--space-4) auto var(--space-6)">
+        Subscribe to the Grand Palais Journal — receive curated event inspiration, planning guides, and exclusive offers.
+      </p>
+      <form class="blog-subscribe-form" onsubmit="event.preventDefault();alert('Thank you for subscribing!')">
+        <input type="email" placeholder="Your email address" required class="blog-subscribe-input" />
+        <button type="submit" class="btn btn-primary blog-subscribe-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5)">
+          <div class="navbar-logo-icon">GP</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Grand Palais</span>
+            <span class="navbar-logo-tagline">Luxury Venue</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">Mumbai's most prestigious luxury banquet hall — where exceptional service meets timeless elegance.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-heading">Pages</h3>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="home2.html" class="footer-link">Home (Alt)</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Wedding Ceremonies</a></li>
+          <li><a href="services.html" class="footer-link">Corporate Events</a></li>
+          <li><a href="services.html" class="footer-link">Private Parties</a></li>
+          <li><a href="services.html" class="footer-link">Catering & Cuisine</a></li>
+          <li><a href="services.html" class="footer-link">Décor & Florals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li class="footer-link">Grand Palais Boulevard,<br>Bandra West, Mumbai 400 050</li>
+          <li><a href="tel:+912212345678" class="footer-link">+91 22 1234 5678</a></li>
+          <li><a href="mailto:info@grandpalais.in" class="footer-link">info@grandpalais.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Grand Palais Luxury Venues Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script type="module" src="js/main.js"></script>
+<script src="js/hamburger.js"></script>
+<script>
+  (function() {
+    var cards = document.querySelectorAll('.blog-grid .blog-card');
+    var pagLinks = document.querySelectorAll('.blog-pagination a');
+    if (!cards.length || !pagLinks.length) return;
+    var perPage = 2;
+    function showPage(n) {
+      cards.forEach(function(c, i) {
+        c.style.display = (i >= (n-1)*perPage && i < n*perPage) ? '' : 'none';
+      });
+      pagLinks.forEach(function(a, i) {
+        if (a.querySelector('.fa-chevron-right')) {
+          a.href = '#';
+          return;
+        }
+        a.classList.toggle('active', i+1 === n);
+      });
+    }
+    pagLinks.forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        if (a.querySelector('.fa-chevron-right')) return;
+        e.preventDefault();
+        showPage(parseInt(a.textContent));
+      });
+    });
+    showPage(1);
+  })();
+</script>
+</body>
+</html>

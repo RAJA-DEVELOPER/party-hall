@@ -144,6 +144,109 @@
   gap: var(--space-4);
 }
 
+/* ── Profile Dropdown ──────────────────────────────────── */
+.navbar-profile {
+  position: relative;
+  display: flex;
+}
+
+.navbar-profile-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+  padding: 0;
+  line-height: 1;
+}
+
+.navbar-profile-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.navbar-profile-btn.open {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-glass);
+}
+
+.navbar-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--duration-base) var(--ease-out),
+              visibility var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+  z-index: var(--z-modal);
+  box-shadow: var(--shadow-xl);
+}
+
+.navbar-profile-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar-profile-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.navbar-profile-link:hover {
+  background: var(--gold-glass);
+  color: var(--gold);
+}
+
+.navbar-profile-link i {
+  width: 18px;
+  text-align: center;
+  font-size: var(--fs-base);
+  flex-shrink: 0;
+}
+
+.navbar-profile-link:last-child {
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-1);
+  padding-top: var(--space-4);
+  border-radius: 0;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.navbar-profile-link:last-child:hover {
+  border-top-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .navbar-profile-dropdown {
+    right: -10px;
+    min-width: 180px;
+  }
+}
+
 /* Hamburger */
 .hamburger {
   display: none;

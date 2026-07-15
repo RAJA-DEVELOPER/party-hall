@@ -48,11 +48,14 @@
 [data-theme="dark"] .legal-content,
 [data-theme="dark"] .sitemap-content,
 [data-theme="dark"] .emergency-section,
+[data-theme="dark"] .blog-section,
+[data-theme="dark"] .blog-instagram,
 [data-theme="dark"] [style*="background:var(--bg-section-alt)"] {
   --text-primary:    var(--black);
   --text-secondary:  rgba(17,17,17,0.75);
   --text-tertiary:   rgba(17,17,17,0.55);
   --text-muted:      rgba(17,17,17,0.35);
+  color: var(--text-primary);
 }
 
 /* ── Card elements with dark backgrounds need light text ── */
@@ -64,6 +67,8 @@
 [data-theme="dark"] .contact-info-card,
 [data-theme="dark"] .contact-form-card,
 [data-theme="dark"] .social-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .blog-featured,
 [data-theme="dark"] [style*="background:var(--bg-card)"],
 [data-theme="dark"] [style*="background:var(--bg-primary)"] {
   --text-primary:    var(--white);
@@ -90,6 +95,8 @@
   --text-secondary: rgba(255,255,255,0.75);
   --text-tertiary:  rgba(255,255,255,0.55);
   --text-muted:     rgba(255,255,255,0.35);
+  --glass-bg:       rgba(255,255,255,0.06);
+  --glass-bg-md:    rgba(255,255,255,0.1);
 }
 
 /* ── Sections hardcoded to black always stay dark ──────── */
@@ -156,6 +163,16 @@ html *::after {
 
 [data-theme="light"] .navbar.scrolled .nav-link {
   color: rgba(17,17,17,0.95);
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-profile-btn {
+  color: rgba(17,17,17,0.9);
+  border-color: rgba(17,17,17,0.12);
+}
+
+[data-theme="light"] .navbar.transparent .navbar-profile-dropdown {
+  --text-secondary: rgba(17,17,17,0.75);
+  --border-color:   rgba(17,17,17,0.08);
 }
 
 [data-theme="light"] .mobile-menu .nav-link {
