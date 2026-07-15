@@ -24,6 +24,8 @@ export function initRTL() {
     document.querySelectorAll('.btn-rtl').forEach(btn => {
       btn.setAttribute('aria-label', isRTL ? 'Switch to LTR' : 'Switch to RTL');
       btn.title = isRTL ? 'LTR' : 'RTL';
+      const txt = btn.querySelector('.btn-rtl-text');
+      if (txt) txt.textContent = isRTL ? 'LTR' : 'RTL';
     });
   }
 }

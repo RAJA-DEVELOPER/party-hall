@@ -1316,8 +1316,12 @@
   color: var(--gold);
   background: var(--gold-glass);
 }
-[dir="rtl"] .btn-rtl svg {
-  transform: scaleX(-1);
+.btn-rtl-text {
+  font-family: var(--font-primary, inherit);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 [dir="rtl"] .navbar-actions { margin-right: 0; margin-left: var(--space-12); }
 [dir="rtl"] .hamburger {
@@ -1337,3 +1341,25 @@
 [dir="rtl"] .breadcrumb-sep {
   transform: scaleX(-1);
 }
+
+/* RTL: flip directional icons (arrows, chevrons, carets) */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-angle-left,
+[dir="rtl"] .fa-caret-right,
+[dir="rtl"] .fa-caret-left,
+[dir="rtl"] .fa-long-arrow-right,
+[dir="rtl"] .fa-long-arrow-left,
+[dir="rtl"] .fa-hand-point-right,
+[dir="rtl"] .fa-hand-point-left,
+[dir="rtl"] .fa-arrow-circle-right,
+[dir="rtl"] .fa-arrow-circle-left,
+[dir="rtl"] .fa-chevron-circle-right,
+[dir="rtl"] .fa-chevron-circle-left {
+  transform: scaleX(-1);
+}
+
+
