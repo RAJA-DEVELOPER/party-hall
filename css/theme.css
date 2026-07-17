@@ -50,11 +50,20 @@
 [data-theme="dark"] .emergency-section,
 [data-theme="dark"] .blog-section,
 [data-theme="dark"] .blog-instagram,
+[data-theme="dark"] .blog-post-main,
 [data-theme="dark"] [style*="background:var(--bg-section-alt)"] {
   --text-primary:    var(--black);
   --text-secondary:  rgba(17,17,17,0.75);
   --text-tertiary:   rgba(17,17,17,0.55);
   --text-muted:      rgba(17,17,17,0.35);
+  color: var(--text-primary);
+}
+
+/* ── Blog sections in light mode — ensure dark text ── */
+[data-theme="light"] .blog-section,
+[data-theme="light"] .blog-instagram,
+[data-theme="light"] .blog-post-main,
+[data-theme="light"] .blog-post-sidebar {
   color: var(--text-primary);
 }
 
@@ -69,6 +78,8 @@
 [data-theme="dark"] .social-card,
 [data-theme="dark"] .blog-card,
 [data-theme="dark"] .blog-featured,
+[data-theme="dark"] .blog-sidebar-card,
+[data-theme="dark"] .blog-post-sidebar-card,
 [data-theme="dark"] [style*="background:var(--bg-card)"],
 [data-theme="dark"] [style*="background:var(--bg-primary)"] {
   --text-primary:    var(--white);

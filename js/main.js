@@ -61,6 +61,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     initAdmin();
   }
 
+  if (page === 'blog-post.html') {
+    const { initBlogPost } = await import('./pages/blog-post.js');
+    initBlogPost();
+  }
+
   if (page === 'maintenance.html') {
     initMaintenance();
   }
