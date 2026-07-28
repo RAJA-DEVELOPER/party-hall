@@ -268,8 +268,50 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
+}
+
+.card-service--featured {
+  background: linear-gradient(135deg, var(--bg-section-alt) 0%, rgba(201,162,39,0.06) 100%);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), var(--shadow-md);
+  position: relative;
+  overflow: visible;
+}
+
+.card-service--featured::before {
+  border-radius: 3px 3px 0 0;
+}
+
+.card-service--featured::after {
+  content: 'Most Requested';
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--black);
+  background: var(--gold);
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card-service--featured .card-service-icon {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: var(--shadow-gold);
+}
+
+.card-service--featured:hover {
+  box-shadow: 0 0 0 1px var(--gold), var(--shadow-xl);
+  transform: translateY(-6px);
 }
 
 @media (max-width: 1024px) {
@@ -458,6 +500,31 @@
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer-newsletter {
+  margin-top: var(--space-6);
+}
+
+.footer-newsletter .newsletter-form {
+  margin-top: var(--space-3);
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.footer-newsletter-label {
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .footer-newsletter .newsletter-form {
+    flex-direction: column;
+  }
 }
 
 .newsletter-input {

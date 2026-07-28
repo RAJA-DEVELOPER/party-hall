@@ -120,6 +120,11 @@
     <a href="https://instagram.com" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
     <div class="hero-v2-sidebar-text">Follow Our Story</div>
   </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-text">Scroll</span>
+    <svg class="hero-scroll-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <svg class="hero-scroll-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
 </section>
 
 <!-- -------------------------------------------------------
@@ -299,7 +304,7 @@
 
     <div class="services-grid">
 
-      <article class="card-service" data-reveal="scale" data-delay="100">
+      <article class="card-service card-service--featured" data-reveal="scale" data-delay="100">
         <div class="card-service-icon"><i class="fa-solid fa-gem"></i></div>
         <h3 class="h4" style="color:var(--text-primary);margin-bottom:var(--space-3)">Wedding Ceremonies</h3>
         <p style="font-size:var(--fs-sm);color:var(--text-tertiary);line-height:var(--lh-relaxed)">Fairy-tale weddings with bespoke decor, floral artistry, and seamless coordination from morning rituals to the grand reception.</p>
@@ -307,23 +312,23 @@
       </article>
 
       <article class="card-service" data-reveal="scale" data-delay="200">
+        <div class="card-service-icon"><i class="fa-solid fa-utensils"></i></div>
+        <h3 class="h4" style="color:var(--text-primary);margin-bottom:var(--space-3)">Fine Dining & Catering</h3>
+        <p style="font-size:var(--fs-sm);color:var(--text-tertiary);line-height:var(--lh-relaxed)">A culinary journey crafted by Michelin-trained chefs — from exquisite plated dinners to lavish multi-cuisine buffets.</p>
+        <a href="services.html" style="display:inline-block;margin-top:var(--space-5);font-size:var(--fs-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Learn More —</a>
+      </article>
+
+      <article class="card-service" data-reveal="scale" data-delay="300">
         <div class="card-service-icon"><i class="fa-solid fa-briefcase"></i></div>
         <h3 class="h4" style="color:var(--text-primary);margin-bottom:var(--space-3)">Corporate Galas</h3>
         <p style="font-size:var(--fs-sm);color:var(--text-tertiary);line-height:var(--lh-relaxed)">Impress your stakeholders with world-class conference facilities, product launches, and award ceremonies in a prestige setting.</p>
         <a href="services.html" style="display:inline-block;margin-top:var(--space-5);font-size:var(--fs-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Learn More —</a>
       </article>
 
-      <article class="card-service" data-reveal="scale" data-delay="300">
+      <article class="card-service" data-reveal="scale" data-delay="100">
         <div class="card-service-icon"><i class="fa-solid fa-crown"></i></div>
         <h3 class="h4" style="color:var(--text-primary);margin-bottom:var(--space-3)">Private Celebrations</h3>
         <p style="font-size:var(--fs-sm);color:var(--text-tertiary);line-height:var(--lh-relaxed)">Birthday milestones, anniversaries, baby showers, and private soirées — each crafted with personal touches and luxury service.</p>
-        <a href="services.html" style="display:inline-block;margin-top:var(--space-5);font-size:var(--fs-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Learn More —</a>
-      </article>
-
-      <article class="card-service" data-reveal="scale" data-delay="100">
-        <div class="card-service-icon"><i class="fa-solid fa-utensils"></i></div>
-        <h3 class="h4" style="color:var(--text-primary);margin-bottom:var(--space-3)">Fine Dining & Catering</h3>
-        <p style="font-size:var(--fs-sm);color:var(--text-tertiary);line-height:var(--lh-relaxed)">A culinary journey crafted by Michelin-trained chefs — from exquisite plated dinners to lavish multi-cuisine buffets.</p>
         <a href="services.html" style="display:inline-block;margin-top:var(--space-5);font-size:var(--fs-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Learn More —</a>
       </article>
 
@@ -470,7 +475,7 @@
       <h2 class="section-title" id="cta-heading" style="color:var(--white)">
         Ready to Create Something<br><em>Extraordinary?</em>
       </h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:var(--fs-md);line-height:var(--lh-relaxed);margin:var(--space-5) auto;max-width:48ch">
+      <p style="color:#fff;font-size:var(--fs-md);line-height:var(--lh-relaxed);margin:var(--space-5) auto;max-width:48ch">
         Let our event architects turn your vision into an unforgettable reality. Schedule a private consultation today.
       </p>
 
@@ -479,15 +484,7 @@
         <a href="tel:+912212345678" class="btn btn-ghost btn-xl"><i class="fa-solid fa-phone"></i> Call Us</a>
       </div>
 
-      <div style="margin-top:var(--space-16);border-top:1px solid rgba(255,255,255,0.08);padding-top:var(--space-12)">
-        <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.4);margin-bottom:var(--space-5);letter-spacing:0.08em;text-transform:uppercase">
-          Subscribe for Exclusive Offers
-        </p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<span style=&quot;color:var(--gold)&quot;><i class=&quot;fa-solid fa-check&quot;></i> You\u2019re subscribed! Thank you.</span>'">
-          <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address" />
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-      </div>
+
     </div>
   </div>
 </section>
@@ -511,6 +508,13 @@
           <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+        <div class="footer-newsletter">
+          <p class="footer-newsletter-label">Subscribe for Exclusive Offers</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<span style=&quot;color:var(--gold)&quot;><i class=&quot;fa-solid fa-check&quot;></i> You\u2019re subscribed! Thank you.</span>'">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address" />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
         </div>
       </div>
       <div>

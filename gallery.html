@@ -101,7 +101,7 @@
       font-size: var(--fs-xs);
       letter-spacing: var(--ls-wider);
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-light);
     }
     .video-card {
       position: relative;
@@ -235,6 +235,18 @@
       .gallery-stats-inner { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
       .venue-grid-3 { grid-template-columns: 1fr !important; max-width: 400px; margin: 0 auto; }
     }
+    @media (max-width:360px) {
+      section[style*="padding:var(--space-24)"] { padding: var(--space-16) 0 !important; }
+      .stat-item { padding: var(--space-4); }
+      .stat-number { font-size: 2rem !important; }
+      .venue-card-content { padding: var(--space-5) !important; }
+      .venue-card-content h3 { font-size: var(--fs-lg) !important; }
+      .filter-btn { padding: var(--space-1) var(--space-4); font-size: var(--fs-xs); }
+      .gallery-filter-nav { gap: var(--space-2); }
+      .video-card-label { bottom: var(--space-3); left: var(--space-3); right: var(--space-3); }
+      .video-card-label h4 { font-size: var(--fs-base) !important; }
+      .video-play-btn { width: 52px; height: 52px; font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
@@ -319,6 +331,11 @@
   <div class="hero-v2-sidebar" aria-hidden="true">
     <a href="https://instagram.com" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
     <div class="hero-v2-sidebar-text">Follow Our Story</div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-text">Scroll</span>
+    <svg class="hero-scroll-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <svg class="hero-scroll-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
 
@@ -445,7 +462,7 @@
         <img src="https://images.unsplash.com/photo-1738217383996-9947554e9f28?auto=format&fit=crop&w=800&q=80" alt="The Royal Ballroom" loading="lazy" />
         <div class="venue-card-overlay"></div>
         <div class="venue-card-content">
-          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Flagship Hall</span>
+          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)">Flagship Hall</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Royal Ballroom</h3>
           <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">12,000 sq ft — Up to 2,000 guests</p>
         </div>
@@ -454,7 +471,7 @@
         <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80" alt="The Garden Pavilion" loading="lazy" />
         <div class="venue-card-overlay"></div>
         <div class="venue-card-content">
-          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Wedding Suite</span>
+          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)">Wedding Suite</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Garden Pavilion</h3>
           <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">5,500 sq ft — Up to 500 guests</p>
         </div>
@@ -463,7 +480,7 @@
         <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="The Executive Suite" loading="lazy" />
         <div class="venue-card-overlay"></div>
         <div class="venue-card-content">
-          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Corporate</span>
+          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)">Corporate</span>
           <h3 style="font-family:var(--font-serif);font-size:var(--fs-xl);color:var(--white);margin-top:var(--space-2)">The Executive Suite</h3>
           <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.55);margin-top:var(--space-2)">3,200 sq ft — Up to 300 guests</p>
         </div>
@@ -487,7 +504,7 @@
           <button class="video-play-btn" aria-label="Play wedding highlights film"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></button>
         </div>
         <div class="video-card-label">
-          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Wedding Film</span>
+          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)">Wedding Film</span>
           <h4 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--white);margin-top:var(--space-1)">Priya & Rohan — December 2024</h4>
         </div>
       </div>
@@ -497,7 +514,7 @@
           <button class="video-play-btn" aria-label="Play corporate gala film"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></button>
         </div>
         <div class="video-card-label">
-          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Corporate Film</span>
+          <span style="font-size:var(--fs-xs);letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)">Corporate Film</span>
           <h4 style="font-family:var(--font-serif);font-size:var(--fs-lg);color:var(--white);margin-top:var(--space-1)">TechCorp Annual Gala 2024</h4>
         </div>
       </div>

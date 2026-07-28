@@ -15,8 +15,8 @@
 
   --text-primary:    var(--black);
   --text-secondary:  rgba(17,17,17,0.75);
-  --text-tertiary:   rgba(17,17,17,0.55);
-  --text-muted:      rgba(17,17,17,0.35);
+  --text-tertiary:   rgba(17,17,17,0.65);
+  --text-muted:      rgba(17,17,17,0.42);
   --text-inverse:    var(--white);
 
   --border-color:    rgba(17,17,17,0.08);
@@ -54,8 +54,8 @@
 [data-theme="dark"] [style*="background:var(--bg-section-alt)"] {
   --text-primary:    var(--black);
   --text-secondary:  rgba(17,17,17,0.75);
-  --text-tertiary:   rgba(17,17,17,0.55);
-  --text-muted:      rgba(17,17,17,0.35);
+  --text-tertiary:   rgba(17,17,17,0.65);
+  --text-muted:      rgba(17,17,17,0.42);
   color: var(--text-primary);
 }
 
@@ -84,8 +84,8 @@
 [data-theme="dark"] [style*="background:var(--bg-primary)"] {
   --text-primary:    var(--white);
   --text-secondary:  rgba(255,255,255,0.75);
-  --text-tertiary:   rgba(255,255,255,0.55);
-  --text-muted:      rgba(255,255,255,0.35);
+  --text-tertiary:   rgba(255,255,255,0.65);
+  --text-muted:      rgba(255,255,255,0.42);
 }
 
 /* ── Form inputs on light-bg sections need explicit light bg in dark mode ── */
@@ -96,7 +96,7 @@
   color: var(--black);
 }
 [data-theme="dark"] .contact-section .form-light .form-input::placeholder {
-  color: rgba(17,17,17,0.35);
+  color: rgba(17,17,17,0.42);
 }
 
 /* ── .section-bg-dark always stays dark in light mode ──── */
@@ -104,8 +104,8 @@
   --bg-primary:     var(--black);
   --text-primary:   var(--white);
   --text-secondary: rgba(255,255,255,0.75);
-  --text-tertiary:  rgba(255,255,255,0.55);
-  --text-muted:     rgba(255,255,255,0.35);
+  --text-tertiary:  rgba(255,255,255,0.65);
+  --text-muted:     rgba(255,255,255,0.42);
   --glass-bg:       rgba(255,255,255,0.06);
   --glass-bg-md:    rgba(255,255,255,0.1);
 }
@@ -114,8 +114,8 @@
 [data-theme="light"] [style*="background:var(--black)"] {
   --text-primary:    var(--white);
   --text-secondary:  rgba(255,255,255,0.75);
-  --text-tertiary:   rgba(255,255,255,0.55);
-  --text-muted:      rgba(255,255,255,0.35);
+  --text-tertiary:   rgba(255,255,255,0.65);
+  --text-muted:      rgba(255,255,255,0.42);
   --border-color:    rgba(255,255,255,0.15);
   --glass-bg:        rgba(255,255,255,0.06);
 }
@@ -137,8 +137,8 @@ html *::after {
 [data-theme="light"] .hero-slider {
   --text-primary:    var(--white);
   --text-secondary:  rgba(255,255,255,0.75);
-  --text-tertiary:   rgba(255,255,255,0.55);
-  --text-muted:      rgba(255,255,255,0.35);
+  --text-tertiary:   rgba(255,255,255,0.65);
+  --text-muted:      rgba(255,255,255,0.42);
   --border-color:    rgba(255,255,255,0.15);
   --glass-bg:        rgba(255,255,255,0.06);
 }
@@ -147,8 +147,8 @@ html *::after {
 [data-theme="light"] .footer {
   --text-primary:    var(--white);
   --text-secondary:  rgba(255,255,255,0.75);
-  --text-tertiary:   rgba(255,255,255,0.55);
-  --text-muted:      rgba(255,255,255,0.35);
+  --text-tertiary:   rgba(255,255,255,0.65);
+  --text-muted:      rgba(255,255,255,0.42);
   --border-color:    rgba(255,255,255,0.15);
   --glass-bg:        rgba(255,255,255,0.06);
 }
@@ -157,8 +157,8 @@ html *::after {
 [data-theme="light"] .dashboard-sidebar {
   --text-primary:    var(--white);
   --text-secondary:  rgba(255,255,255,0.75);
-  --text-tertiary:   rgba(255,255,255,0.55);
-  --text-muted:      rgba(255,255,255,0.35);
+  --text-tertiary:   rgba(255,255,255,0.65);
+  --text-muted:      rgba(255,255,255,0.42);
   --border-color:    rgba(255,255,255,0.15);
   --glass-bg:        rgba(255,255,255,0.06);
 }
@@ -167,7 +167,7 @@ html *::after {
 [data-theme="light"] .navbar.transparent {
   --text-primary:   var(--white);
   --text-secondary: rgba(255,255,255,0.75);
-  --text-muted:     rgba(255,255,255,0.35);
+  --text-muted:     rgba(255,255,255,0.42);
   --border-color:   rgba(255,255,255,0.15);
   --glass-bg:       rgba(255,255,255,0.06);
 }
@@ -204,5 +204,5 @@ html *::after {
 
 /* ── Breadcrumbs always stay light (on dark hero) ────────── */
 [data-theme="light"] .breadcrumbs {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
 }
