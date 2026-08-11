@@ -576,8 +576,13 @@
 }
 
 .btn-secondary:hover {
-  background: var(--gold-muted);
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
   box-shadow: var(--shadow-gold);
+}
+.btn-secondary:hover::after {
+  opacity: 0;
 }
 
 /* Ghost — White Outline */
@@ -792,6 +797,27 @@
   background: var(--gold);
   color: var(--black);
   box-shadow: var(--shadow-gold);
+}
+
+.card-service h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.card-service p {
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+}
+
+.card-service-link {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 /* Testimonial Card */

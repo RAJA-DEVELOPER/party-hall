@@ -71,7 +71,7 @@
 
 /* Sidebar Navigation */
 .sidebar-nav {
-  padding: var(--space-4) var(--space-3);
+  padding: var(--space-4) 0;
   flex: 1;
 }
 
@@ -81,14 +81,14 @@
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
   color: var(--text-muted);
-  padding: var(--space-4) var(--space-3) var(--space-2);
+  padding: var(--space-4) 0 var(--space-2) calc(var(--space-6) + var(--space-3) + 20px);
 }
 
 .sidebar-nav-item {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-lg);
   color: var(--text-tertiary);
   font-size: var(--fs-sm);
@@ -135,7 +135,7 @@
 }
 
 .sidebar-footer {
-  padding: var(--space-5) var(--space-3);
+  padding: var(--space-5) var(--space-6);
   border-top: 1px solid var(--border-color);
 }
 
@@ -744,7 +744,7 @@
 .sidebar-toggle {
   display: none;
   position: fixed;
-  bottom: var(--space-8);
+  top: calc(var(--space-6) + env(safe-area-inset-top));
   right: var(--space-6);
   z-index: var(--z-modal);
   width: 48px;
