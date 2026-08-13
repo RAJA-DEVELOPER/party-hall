@@ -754,6 +754,8 @@
   transition: var(--transition-slow);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-service::before {
@@ -808,6 +810,7 @@
   font-size: var(--fs-sm);
   color: var(--text-tertiary);
   line-height: var(--lh-relaxed);
+  flex: 1;
 }
 
 .card-service-link {
